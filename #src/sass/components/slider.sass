@@ -1,0 +1,26 @@
+.slider
+  position: relative
+  margin-bottom: 30px
+
+  &__item
+    display: none
+
+    &--active
+      display: block
+
+  &__btn
+    position: absolute
+    top: 100px
+    width: 26px
+    height: 26px
+    border-radius: 50%
+    border: none
+    background-color: $color-dark-gray
+    font-size: 0
+    line-height: 0
+
+    &--prev
+      left: 20px
+
+    &--next
+      left: 270px

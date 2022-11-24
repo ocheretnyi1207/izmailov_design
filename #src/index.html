@@ -33,10 +33,10 @@
             <a href="#gallery" class="nav-list__lnk nav-list__lnk--header">Галерея работ</a>
           </li>
           <li class="nav-list__item">
-            <a href="#works" class="nav-list__lnk nav-list__lnk--header">Доставка, монтаж, оплата</a>
+            <a href="#how-works" class="nav-list__lnk nav-list__lnk--header">Доставка, монтаж, оплата</a>
           </li>
           <li class="nav-list__item">
-            <a href="#production" class="nav-list__lnk nav-list__lnk--header">Наше производство</a>
+            <a href="#manufacture" class="nav-list__lnk nav-list__lnk--header">Наше производство</a>
           </li>
           <li class="nav-list__item">
             <a href="#contacts" class="nav-list__lnk nav-list__lnk--header">Контакты</a>
@@ -70,8 +70,8 @@
         </div>
         <p class="header-content__text">Расчет стоимости изделия по индивидуальным параметрам бесплатно</p>
         <div class="header-wrap">
-          <button>Заказать рассчет</button>
-          <button>Обратный звонок</button>
+          <button class="header-content__btn button">Заказать рассчет</button>
+          <button class="header-content__btn">Обратный звонок</button>
         </div>
       </div>
     </div>
@@ -140,7 +140,7 @@
             заказа изделия:</legend>
           <input class="application-form__element application-form__element--username" type="text" name="username" id="username" placeholder="как к вам обращаться?">
           <input class="application-form__element application-form__element--userphone" type="tel" name="userphone" id="userphone" placeholder="ваш телефон?">
-          <input class="application-form__element application-form__element--submit" type="submit" value="заказать рассчет">
+          <input class="application-form__element application-form__element--submit button" type="submit" value="заказать рассчет">
         </fieldset>
       </form>
     </div>
@@ -203,9 +203,9 @@
       </div>
     </section>
     <section id="gallery"></section>
-    <section id="works" class="works">
+    <section id="how-works" class="how-works">
       <div class="container">
-        <h2 class="works__title">Как мы работаем</h2>
+        <h2 class="how-works__title">Как мы работаем</h2>
         <ul class="works-list">
           <li class="works-list__item">
             <p class="works-list__title">Заявка</p>
@@ -237,71 +237,66 @@
             <p class="works-list__text">берем оплату по факту доставки и установки готового изделия (наличный расчет)</p>
           </li>
         </ul>
-        <button class="works-btn">Оставить заявку</button>
+        <button class="how-works__btn button">оставить заявку</button>
       </div>
     </section>
-    <section id="production" class="production">
+    <section id="manufacture" class="manufacture">
       <div class="container">
-        <h2 class="production__title">Наше производство</h2>
-        <ul class="production-list">
-          <li class="production-list__item">
+        <h2 class="manufacture__title">Наше производство</h2>
+        <div class="manufacture-wrap">
+          <div class="manufacture-wrap__item">
             <picture>
-              <source media="(min-width: 1440px)" srcset="img/production-img-desktop-1.jpg">
-              <img src="img/production-img-mobile-1.jpg" alt="Производство">
+              <source media="(min-width: 1440px)" srcset="img/manufacture-img-desktop-1.jpg">
+              <img src="img/manufacture-img-mobile-1.jpg" alt="Изображение 1">
             </picture>
-          </li>
-          <li class="production-list__item">
             <picture>
-              <source media="(min-width: 1440px)" srcset="img/production-img-desktop-2.jpg">
-              <img src="img/production-img-mobile-2.jpg" alt="Производство">
+              <source media="(min-width: 1440px)" srcset="img/manufacture-img-desktop-2.jpg">
+              <img src="img/manufacture-img-mobile-2.jpg" alt="Изображение 2">
             </picture>
-          </li>
-          <li class="production-list__item">
+          </div>
+          <div class="manufacture-wrap__item">
             <picture>
-              <source media="(min-width: 1440px)" srcset="img/production-img-desktop-3.jpg">
-              <img src="img/production-img-mobile-3.jpg" alt="Производство">
+              <source media="(min-width: 1440px)" srcset="img/manufacture-img-desktop-3.jpg">
+              <img src="img/manufacture-img-mobile-3.jpg" alt="Изображение 3">
             </picture>
-          </li>
-          <li class="production-list__item">
             <picture>
-              <source media="(min-width: 1440px)" srcset="img/production-img-desktop-4.jpg">
-              <img src="img/production-img-mobile-4.jpg" alt="Производство">
+              <source media="(min-width: 1440px)" srcset="img/manufacture-img-desktop-4.jpg">
+              <img src="img/manufacture-img-mobile-4.jpg" alt="Изображение 4">
             </picture>
-          </li>
-          <li class="production-list__item">
+          </div>
+          <div class="manufacture-wrap__item">
             <picture>
-              <source media="(min-width: 1440px)" srcset="img/production-img-desktop-5.jpg">
-              <img src="img/production-img-mobile-5.jpg" alt="Производство">
+              <source media="(min-width: 1440px)" srcset="img/manufacture-img-desktop-5.jpg">
+              <img src="img/manufacture-img-mobile-5.jpg" alt="Изображение 5">
             </picture>
-          </li>
-          <li class="production-list__item">
+          </div>
+          <div class="manufacture-wrap__item">
             <picture>
-              <source media="(min-width: 1440px)" srcset="img/production-img-desktop-6.jpg">
-              <img src="img/production-img-mobile-6.jpg" alt="Производство">
+              <source media="(min-width: 1440px)" srcset="img/manufacture-img-desktop-6.jpg">
+              <img src="img/manufacture-img-mobile-6.jpg" alt="Изображение 6">
             </picture>
-          </li>
-          <li class="production-list__item">
+          </div>
+          <div class="manufacture-wrap__item">
             <picture>
-              <source media="(min-width: 1440px)" srcset="img/production-img-desktop-7.jpg">
-              <img src="img/production-img-mobile-7.jpg" alt="Производство">
+              <source media="(min-width: 1440px)" srcset="img/manufacture-img-desktop-7.jpg">
+              <img src="img/manufacture-img-mobile-7.jpg" alt="Изображение 7">
             </picture>
-          </li>
-          <li class="production-list__item">
+          </div>
+          <div class="manufacture-wrap__item">
             <picture>
-              <source media="(min-width: 1440px)" srcset="img/production-img-desktop-8.jpg">
-              <img src="img/production-img-mobile-8.jpg" alt="Производство">
+              <source media="(min-width: 1440px)" srcset="img/manufacture-img-desktop-8.jpg">
+              <img src="img/manufacture-img-mobile-8.jpg" alt="Изображение 8">
             </picture>
-          </li>
-          <li class="production-list__item">
+          </div>
+          <div class="manufacture-wrap__item">
             <picture>
-              <source media="(min-width: 1440px)" srcset="img/production-img-desktop-9.jpg">
-              <img src="img/production-img-mobile-9.jpg" alt="Производство">
+              <source media="(min-width: 1440px)" srcset="img/manufacture-img-desktop-9.jpg">
+              <img src="img/manufacture-img-mobile-9.jpg" alt="Изображение 9">
             </picture>
-          </li>
-        </ul>
-      </div>
+          </div>
+        </div>
     </section>
-    <section id="contact" class="contacts">
+    <section id="contacts" class="contacts">
       <h2 class="contacts__title">Контакты</h2>
       <p class="contacts__author">Измайлов Павел Сергеевич</p>
       <a class="contacts__lnk" href="tel:+79111266623">+7 (911) 126 66 23</a>
@@ -331,10 +326,10 @@
         <a href="#gallery" class="nav-list__lnk nav-list__lnk--footer">Галерея работ</a>
       </li>
       <li class="nav-list__item">
-        <a href="#works" class="nav-list__lnk nav-list__lnk--footer">Доставка, монтаж, оплата</a>
+        <a href="#how-works" class="nav-list__lnk nav-list__lnk--footer">Доставка, монтаж, оплата</a>
       </li>
       <li class="nav-list__item">
-        <a href="#production" class="nav-list__lnk nav-list__lnk--footer">Наше производство</a>
+        <a href="#manufacture" class="nav-list__lnk nav-list__lnk--footer">Наше производство</a>
       </li>
       <li class="nav-list__item">
         <a href="#contacts" class="nav-list__lnk nav-list__lnk--footer">Контакты</a>

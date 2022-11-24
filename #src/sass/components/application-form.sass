@@ -17,12 +17,15 @@
 
   &__element
     width: 234px
-    padding-left: 10px
     padding-top: 14px
     padding-bottom: 14px
-    background-color: $color-form-element
     border: none
     margin-bottom: 15px
+
+    &--userphone,
+    &--username
+      padding-left: 10px
+      background-color: $color-form-element
 
     &::placeholder
       font-size: 10px
@@ -33,11 +36,5 @@
     &--submit
       width: 116px
       min-height: 49px
-      border-radius: 5px
-      background-color: $color-button
-      font-size: 10px
-      line-height: 12px
-      color: $color-black
-      padding: 0 2px
       margin-bottom: 0
 

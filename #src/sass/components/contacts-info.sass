@@ -5,15 +5,24 @@
   display: flex
   justify-content: space-between
 
-  &__lnk
+  &--footer
+    flex-direction: row-reverse
+
+  &__tel
     display: block
     color: $color-dark-gray
     font-size: 10px
     line-height: 12px
 
-    &--whatsapp
-      font-size: 0
-      line-height: 0
-      width: 15px
-      height: 15px
-      background: url("/img/whatsapp-icon.svg") no-repeat
+    &--footer
+      color: $color-white
+
+  &__whatsapp
+    font-size: 0
+    line-height: 0
+    width: 15px
+    height: 15px
+    background: url("/img/whatsapp-icon-header.svg") no-repeat
+
+    &--footer
+      background: url("/img/whatsapp-icon-footer.svg") no-repeat

@@ -21,31 +21,31 @@
           <a href="tel:+79111266623" class="contacts-info__tel">+7 (911) 126 66 23</a>
           <button class="callback callback--passive">Обратный звонок</button>
         </div>
-        <a href="#" class="page-header__navlnk">Открыть меню навигации</a>
-        <ul class="nav-list nav-list--passive">
-          <li class="nav-list__item">
-            <a href="index.html" class="nav-list__lnk nav-list__lnk">Главная</a>
+        <btn class="page-header__btn">Открыть меню навигации</btn>
+        <ul class="nav-list nav-list--header nav-list--passive">
+          <li class="nav-list__item nav-list__item--header">
+            <a href="index.html" class="nav-list__lnk nav-list__lnk--header">Главная</a>
           </li>
-          <li class="nav-list__item">
-            <a href="catalog.html" class="nav-list__lnk nav-list__lnk">Каталог</a>
+          <li class="nav-list__item nav-list__item--header">
+            <a href="catalog.html" class="nav-list__lnk nav-list__lnk--header">Каталог</a>
           </li>
-          <li class="nav-list__item">
-            <a href="#gallery" class="nav-list__lnk nav-list__lnk">Галерея работ</a>
+          <li class="nav-list__item nav-list__item--header">
+            <a href="#gallery" class="nav-list__lnk nav-list__lnk--header">Галерея работ</a>
           </li>
-          <li class="nav-list__item">
-            <a href="#how-works" class="nav-list__lnk nav-list__lnk">Доставка, монтаж, оплата</a>
+          <li class="nav-list__item nav-list__item--header">
+            <a href="#how-works" class="nav-list__lnk nav-list__lnk--header">Доставка, монтаж, оплата</a>
           </li>
-          <li class="nav-list__item">
-            <a href="#manufacture" class="nav-list__lnk nav-list__lnk">Наше производство</a>
+          <li class="nav-list__item nav-list__item--header">
+            <a href="#manufacture" class="nav-list__lnk nav-list__lnk--header">Наше производство</a>
           </li>
-          <li class="nav-list__item">
-            <a href="#contacts" class="nav-list__lnk nav-list__lnk">Контакты</a>
+          <li class="nav-list__item nav-list__item--header">
+            <a href="#contacts" class="nav-list__lnk nav-list__lnk--header">Контакты</a>
           </li>
         </ul>
       </div>
       <div class="header-content">
         <h1 class="header-content__title">Авторские изделия из дерева</h1>
-        <p class="header-content__text">Производство, доставка и монтаж</p>
+        <p class="header-content__text">производство, доставка и монтаж</p>
         <div class="slider">
           <div class="slider__item slider__item--active">
             <picture>
@@ -68,10 +68,10 @@
           <button class="slider__btn slider__btn--prev">Предыдущий слайд</button>
           <button class="slider__btn slider__btn--next">Следующий слайд</button>
         </div>
-        <p class="header-content__text">расчет стоимости изделия по индивидуальным параметрам бесплатно</p>
+        <p class="header-content__description">расчет стоимости изделия по индивидуальным параметрам бесплатно</p>
         <div class="header-content__wrap">
-          <button class="header-content__btn button">Заказать рассчет</button>
-          <button class="header-content__btn button button--white">Обратный звонок</button>
+          <button class="header-content__btn button">заказать расчет</button>
+          <button class="header-content__btn button button--white">обратный звонок</button>
         </div>
       </div>
     </div>
@@ -82,7 +82,7 @@
         <h2 class="products__title">Мы изготавливаем:</h2>
         <ul class="product-list">
           <li class="product-list__item">
-            <p class="product-list__title">Беседы-перголы</p>
+            <p class="product-list__title">Беседки-перголы</p>
             <picture>
               <source media="(min-width: 1440px)" srcset=img/products-img-desktop-1.jpg> <img
                 src="img/products-img-mobile-1.jpg" alt="Беседки перголы">
@@ -140,7 +140,7 @@
             заказа изделия:</legend>
           <input class="application-form__element application-form__element--username" type="text" name="username" id="username" placeholder="как к вам обращаться?">
           <input class="application-form__element application-form__element--userphone" type="tel" name="userphone" id="userphone" placeholder="ваш телефон?">
-          <input class="application-form__element application-form__element--submit button" type="submit" value="заказать рассчет">
+          <input class="application-form__element application-form__element--submit button" type="submit" value="заказать расчет">
         </fieldset>
       </form>
     </div>
@@ -202,26 +202,26 @@
         </ul>
       </div>
     </section>
-    <section id="gallery">
+    <section id="gallery" class="gallery">
       <div class="container">
         <h2 class="gallery__title">Галерея работ</h2>
         <div class="gallery-slider">
-          <div class="gallery-slider__dotted">
+          <div class="gallery-slider__dottedwrap">
             <span class="gallery-slider__dotted"></span>
-            <span class="gallery-slider__dotted"></span>
+            <span class="gallery-slider__dotted gallery-slider__dotted--active"></span>
             <span class="gallery-slider__dotted"></span>
           </div>
           <div class="gallery-slider__wrap">
             <div class="gallery-slider__item">
-              <ul class="gallery-slides">
+              <ul class="gallery-slides gallery-slides--one">
                 <li class="gallery-slides__item">
-                  <picture>
+                  <picture class="gallery-slides__img">
                     <img src="img/gallery-img-mobile-1.jpg" alt="Image">
                   </picture>
-                  <picture>
+                  <picture class="gallery-slides__img">
                     <img src="img/gallery-img-mobile-2.jpg" alt="Image">
                   </picture>
-                  <picture>
+                  <picture class="gallery-slides__img">
                     <img src="img/gallery-img-mobile-3.jpg" alt="Image">
                   </picture>
                 </li>
@@ -229,6 +229,8 @@
                   <picture>
                     <img src="img/gallery-img-mobile-4.jpg" alt="Image">
                   </picture>
+                </li>
+                <li class="gallery-slides__item">
                   <picture>
                     <img src="img/gallery-img-mobile-5.jpg" alt="Image">
                   </picture>
@@ -236,37 +238,37 @@
               </ul>
             </div>
             <div class="gallery-slider__item gallery-slider__item--active">
-              <ul class="gallery-slides">
+              <ul class="gallery-slides gallery-slides--two">
                 <li class="gallery-slides__item">
-                  <picture>
+                  <picture class="gallery-slides__img">
                     <img src="img/gallery-img-mobile-6.jpg" alt="image">
                   </picture>
-                  <picture>
+                  <picture class="gallery-slides__img">
                     <img src="img/gallery-img-mobile-7.jpg" alt="image">
                   </picture>
                 </li>
                 <li class="gallery-slides__item">
-                  <picture>
+                  <picture class="gallery-slides__img">
                     <img src="img/gallery-img-mobile-8.jpg" alt="image">
                   </picture>
-                  <picture>
+                  <picture class="gallery-slides__img">
                     <img src="img/gallery-img-mobile-9.jpg" alt="image">
                   </picture>
                 </li>
                 <li class="gallery-slides__item">
-                  <picture>
+                  <picture class="gallery-slides__img">
                     <img src="img/gallery-img-mobile-10.jpg" alt="image">
                   </picture>
                 </li>
                 <li class="gallery-slides__item">
-                  <picture>
+                  <picture class="gallery-slides__img">
                     <img src="img/gallery-img-mobile-11.jpg" alt="image">
                   </picture>
                 </li>
               </ul>
             </div>
             <div class="gallery-slider__item">
-              <ul class="gallery-slides">
+              <ul class="gallery-slides gallery-slides--three">
                 <li class="gallery-slides__item">
                   <picture>
                     <img src="img/gallery-img-mobile-12.jpg" alt="image">
@@ -417,23 +419,23 @@
             <button class="callback callback--passive">Обратный звонок</button>
           </div>
         </div>
-      <ul class="nav-list">
-        <li class="nav-list__item">
+      <ul class="nav-list nav-list--footer">
+        <li class="nav-list__item nav-list__item--footer">
           <a href="index.html" class="nav-list__lnk nav-list__lnk--footer">Главная</a>
         </li>
-        <li class="nav-list__item">
+        <li class="nav-list__item nav-list__item--footer">
           <a href="catalog.html" class="nav-list__lnk nav-list__lnk--footer">Каталог</a>
         </li>
-        <li class="nav-list__item">
+        <li class="nav-list__item nav-list__item--footer">
           <a href="#gallery" class="nav-list__lnk nav-list__lnk--footer">Галерея работ</a>
         </li>
-        <li class="nav-list__item">
+        <li class="nav-list__item nav-list__item--footer">
           <a href="#how-works" class="nav-list__lnk nav-list__lnk--footer">Доставка, монтаж, оплата</a>
         </li>
-        <li class="nav-list__item">
+        <li class="nav-list__item nav-list__item--footer">
           <a href="#manufacture" class="nav-list__lnk nav-list__lnk--footer">Наше производство</a>
         </li>
-        <li class="nav-list__item">
+        <li class="nav-list__item nav-list__item--footer">
           <a href="#contacts" class="nav-list__lnk nav-list__lnk--footer">Контакты</a>
         </li>
       </ul>

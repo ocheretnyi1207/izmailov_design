@@ -1,15 +1,16 @@
 .works-list
   display: inline-grid
-  margin-bottom: 20px
+  margin-bottom: 33px
   grid-template-columns: repeat(2, 1fr)
-  grid-gap: 20px
+  grid-gap: 19px
+  letter-spacing: 0.5px
 
   &__item
     position: relative
 
     &::before
       position: absolute
-      right: 0
+      right: 2px
       top: 5px
       content: ""
       width: 32px
@@ -17,7 +18,7 @@
       background: url("/img/arrow-icon.svg") no-repeat
 
   &__title
-    margin-bottom: 5px
+    margin-bottom: 6px
     font-size: 16px
     line-height: 19px
 

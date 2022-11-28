@@ -1,6 +1,6 @@
 .slider
   position: relative
-  margin-bottom: 30px
+  margin-bottom: 26px
 
   &__item
     display: none
@@ -10,7 +10,7 @@
 
   &__btn
     position: absolute
-    top: 100px
+    top: 103px
     width: 26px
     height: 26px
     border-radius: 50%
@@ -20,7 +20,27 @@
     line-height: 0
 
     &--prev
-      left: 20px
+      left: 14px
+
+      &::before
+        content: ""
+        position: absolute
+        width: 12px
+        height: 15px
+        background: url("img/arrow-left-icon.svg") no-repeat
+        top: 5px
+        left: 5px
+
 
     &--next
-      left: 270px
+      left: 278px
+
+      &::before
+        content: ""
+        position: absolute
+        width: 12px
+        height: 15px
+        background: url("img/arrow-right-icon.svg") no-repeat
+        top: 5px
+        left: 8px
+

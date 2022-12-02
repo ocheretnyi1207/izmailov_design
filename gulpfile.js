@@ -41,6 +41,8 @@ gulp.task("css", () => {
     })
 
     gulp.watch("#src/sass/**/*.sass", gulp.series("css", "refresh"));
+    gulp.watch("#src/img/**/*.{jpeg,jpg,png,svg}", gulp.series("copy"));
+    gulp.watch("#src/js/**/*.js", gulp.series("copy"));
     gulp.watch("#src/index.html", gulp.series("copy"));
     gulp.watch("#src/index.html").on("change", browsersync.reload);
   });

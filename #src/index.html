@@ -14,12 +14,15 @@
     <div class="container">
       <div class="page-header__menu">
         <a class="page-header__lnk" href="index.html">
-          <img class="page-header__logo" width="94" height="25" src="img/header-logo.svg" alt="Логотип">
+          <picture class="page-header__logo">
+            <source media="(min-width: 1440px)" srcset="img/header-logo-desktop.png">
+            <img src="img/header-logo-mobile.png" alt="Логотип">
+          </picture>
         </a>
         <div class="contacts-info">
           <a href="https://wa.me/79111266623" class="contacts-info__whatsapp">WhatsApp</a>
           <a href="tel:+79111266623" class="contacts-info__tel">+7 (911) 126 66 23</a>
-          <button class="callback callback--passive">Обратный звонок</button>
+          <button class="contacts-info__btn button button--white">обратный звонок</button>
         </div>
         <btn class="page-header__btn">Открыть меню навигации</btn>
         <ul class="nav-list nav-list--header nav-list--passive">
@@ -46,7 +49,7 @@
       <div class="header-content">
         <h1 class="header-content__title">Авторские изделия из дерева</h1>
         <p class="header-content__text">производство, доставка и монтаж</p>
-        <div class="slider">
+        <div class="header-content__slider slider">
           <div class="slider__item slider__item--active">
             <picture>
               <source media="(min-width: 1440px)" srcset="img/slider-img-desktop-1.jpg">
@@ -71,7 +74,7 @@
         <p class="header-content__description">расчет стоимости изделия по индивидуальным параметрам бесплатно</p>
         <div class="header-content__wrap">
           <button class="header-content__btn button">заказать расчет</button>
-          <button class="header-content__btn button button--white">обратный звонок</button>
+          <button class="header-content__btn header-content__btn--callback button button--white">обратный звонок</button>
         </div>
       </div>
     </div>

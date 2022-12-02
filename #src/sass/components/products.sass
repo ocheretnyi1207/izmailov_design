@@ -2,11 +2,17 @@
   margin-bottom: 97px
 
   &__title
-    font-size: 24px
-    line-height: 29px
     margin-bottom: 20px
+
+    @media ($width-desktop)
+      margin-bottom: 50px
 
   &__text
     font-size: 14px
     line-height: 17px
     letter-spacing: 0.5px
+
+    @media ($width-desktop)
+      width: 820px
+      font-size: 20px
+      line-height: 24px

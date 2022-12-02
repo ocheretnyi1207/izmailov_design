@@ -2,9 +2,16 @@
   padding-top: 13px
   margin-bottom: 101px
 
+  @media ($width-desktop)
+    padding-top: 34px
+    margin-bottom: 239px
+
   &__menu
     display: flex
     margin-bottom: 62px
+
+    @media ($width-desktop)
+      margin-bottom: 98px
 
   &__lnk
     display: block
@@ -12,12 +19,17 @@
     height: 25px
     margin-right: 39px
 
+    @media ($width-desktop)
+      width: 203px
+      height: 53px
+      margin-right: 397px
+
   &__navlnk
     font-size: 0
     line-height: 0
 
   &__logo
-    margin-right: 40px
+    display: block
 
   &__btn
     position: relative
@@ -27,4 +39,11 @@
     height: 18px
     font-size: 0
     line-height: 0
-    background: url("/img/burger-icon.svg") no-repeat
+    background: url("/img/burger-icon-mobile.png") no-repeat
+
+    @media ($width-desktop)
+      width: 40px
+      height: 27px
+      background: url("/img/burger-icon-desktop.png") no-repeat
+
+

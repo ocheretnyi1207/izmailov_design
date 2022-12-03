@@ -1,5 +1,3 @@
-"use strict";
-
 const SOURCE = "#src"
 const BUILD = "build";
 
@@ -10,6 +8,10 @@ const PATH = {
     JS: SOURCE + "/js/**/*.js",
     IMG: SOURCE + "/img/**/*.{jpeg,jpg,png,svg,webp}",
     FONTS: SOURCE + "/fonts/**/*.{woff2,woff}"
+  },
+
+  WATCH: {
+    SASS: SOURCE + "/**/*.sass"
   },
 
   APP: BUILD + "/",
@@ -57,7 +59,7 @@ gulp.task("css", () => {
       ui: false
     })
 
-    gulp.watch(PATH.SRC.SASS, gulp.series("css", "refresh"));
+    gulp.watch(PATH.WATCH.SASS, gulp.series("css", "refresh"));
     gulp.watch(PATH.SRC.IMG, gulp.series("copy"));
     gulp.watch(PATH.SRC.JS, gulp.series("copy"));
     gulp.watch(PATH.SRC.HTML, gulp.series("copy"));

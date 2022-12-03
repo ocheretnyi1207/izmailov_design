@@ -9,9 +9,16 @@
     grid-template-columns: repeat(3, 1fr)
     grid-row-gap: 50px
 
+  &__item
+    @media ($width-desktop)
+      position: relative
+
   &__img
     display: block
     margin-bottom: 1px
+
+    @media ($width-desktop)
+      margin-bottom: 0
 
   &__title
     font-size: 16px
@@ -34,3 +41,14 @@
     font-size: 10px
     line-height: 12px
     letter-spacing: 0.3px
+
+    @media ($width-desktop)
+      position: absolute
+      right: 20px
+      bottom: 20px
+      width: 135px
+      min-height: 35px
+      font-size: 16px
+      line-height: 19px
+      padding: 8px 2px
+

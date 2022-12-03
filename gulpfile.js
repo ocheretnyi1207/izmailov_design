@@ -1,3 +1,20 @@
+"use strict";
+
+const SOURCE = "#src"
+const BUILD = "build";
+
+const PATH = {
+  SRC: {
+    HTML: SOURCE + "/**/*.html",
+    SASS: SOURCE + "/sass/core/style.sass",
+    JS: SOURCE + "/js/**/*.js",
+    IMG: SOURCE + "/img/**/*.{jpeg,jpg,png,svg,webp}",
+    FONTS: SOURCE + "/fonts/**/*.{woff2,woff}"
+  },
+
+  APP: BUILD + "/",
+}
+
 const gulp = require("gulp");
 const plumber = require("gulp-plumber");
 const sass = require("gulp-sass")(require("sass"));
@@ -6,45 +23,45 @@ const sourcemaps = require("gulp-sourcemaps");
 const del = require("del");
 
 gulp.task("css", () => {
-    return gulp.src("#src/sass/core/style.sass")
+    return gulp.src(PATH.SRC.SASS)
       .pipe(plumber())
       .pipe(sourcemaps.init())
       .pipe(sass())
       .pipe(sourcemaps.write())
-      .pipe(gulp.dest("build/"))
+      .pipe(gulp.dest(PATH.APP))
       .pipe(browsersync.stream())
   });
 
   gulp.task("copy", () => {
     return gulp.src([
-        "#src/img/**/*.{jpeg,jpg,png,svg}",
-        "#src/index.html",
-        "#src/js/**/*.js",
-        "#src/fonts/**/*.{woff2,woff}"
+        PATH.SRC.IMG,
+        PATH.SRC.HTML,
+        PATH.SRC.JS,
+        PATH.SRC.FONTS
       ], {
-        base: "#src"
+        base: SOURCE
       })
-      .pipe(gulp.dest("build"))
+      .pipe(gulp.dest(BUILD))
   });
 
   gulp.task("clean", () => {
-    return del("build")
+    return del(BUILD)
   });
 
   gulp.task("server", () => {
     browsersync.init({
-      server: "build/",
+      server: PATH.APP,
       notify: false,
       open: true,
       cors: true,
       ui: false
     })
 
-    gulp.watch("#src/sass/**/*.sass", gulp.series("css", "refresh"));
-    gulp.watch("#src/img/**/*.{jpeg,jpg,png,svg}", gulp.series("copy"));
-    gulp.watch("#src/js/**/*.js", gulp.series("copy"));
-    gulp.watch("#src/index.html", gulp.series("copy"));
-    gulp.watch("#src/index.html").on("change", browsersync.reload);
+    gulp.watch(PATH.SRC.SASS, gulp.series("css", "refresh"));
+    gulp.watch(PATH.SRC.IMG, gulp.series("copy"));
+    gulp.watch(PATH.SRC.JS, gulp.series("copy"));
+    gulp.watch(PATH.SRC.HTML, gulp.series("copy"));
+    gulp.watch(PATH.SRC.HTML).on("change", browsersync.reload);
   });
 
   gulp.task("refresh", (done) => {

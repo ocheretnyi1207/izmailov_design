@@ -1,18 +1,38 @@
 .materials
   margin-bottom: 98px
 
+  @media ($width-desktop)
+    margin-bottom: 117px
+
   &__title
     margin-bottom: 20px
+
+    @media ($width-desktop)
+      margin-bottom: 50px
+
+  &__wrap
+    @media ($width-desktop)
+      display: flex
+      flex-direction: row-reverse
 
   &__img
     display: block
     margin-bottom: 18px
+
+    @media ($width-desktop)
+      margin-bottom: 0
 
   &__text
     font-size: 14px
     line-height: 17px
     margin-bottom: 10px
     letter-spacing: 0.5px
+
+    @media ($width-desktop)
+      margin-bottom: 30px
+      font-size: 20px
+      line-height: 24px
+
 
     &:last-child
       margin-bottom: 0

@@ -7,6 +7,10 @@
     margin: 0 auto
     margin-bottom: 24px
 
+    @media ($width-desktop)
+      width: 1000px
+      height: 4px
+
   &__dotted
     width: 7px
     height: 7px
@@ -15,20 +19,39 @@
     position: absolute
     top: calc(50% - 3.5px)
 
+    @media ($width-desktop)
+      width: 15px
+      height: 15px
+      top: calc( 50% - 7.5px)
+
     &:first-child
       left: 81px
+
+      @media ($width-desktop)
+        left: 395px
 
     &:nth-child(3n+2)
       left: 108px
 
+      @media ($width-desktop)
+        left: 487px
+
     &:last-child
       left: 136px
+
+      @media ($width-desktop)
+        left: 587px
 
     &--active
       width: 9px
       height: 9px
       top: calc(50% - 4.5px)
       background-color: $color-dark-gray
+
+      @media ($width-desktop)
+        width: 20px
+        height: 20px
+        top: calc(50% - 10px)
 
   &__item
     display: none

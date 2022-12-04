@@ -18,28 +18,52 @@
     font-size: 0
     line-height: 0
 
+    @media ($width-desktop)
+      width: 50px
+      height: 50px
+      top: 263px
+
     &--prev
       left: 14px
 
+      @media ($width-desktop)
+        left: 25px
+
       &::before
         content: ""
         position: absolute
-        width: 12px
-        height: 15px
-        background: url("img/arrow-left-icon.svg") no-repeat
+        width: 15px
+        height: 17px
+        background: url("img/arrow-left-icon-mobile.png") no-repeat
         top: 5px
         left: 5px
 
+        @media ($width-desktop)
+          width: 23px
+          height: 27px
+          background: url("img/arrow-left-icon-desktop.png") no-repeat
+          top: 10px
+          left: 14px
 
     &--next
-      left: 278px
+      right: 25px
+
+      @media ($width-desktop)
+        right: 27px
 
       &::before
         content: ""
         position: absolute
-        width: 12px
-        height: 15px
-        background: url("img/arrow-right-icon.svg") no-repeat
+        width: 15px
+        height: 17px
+        background: url("img/arrow-right-icon-mobile.png") no-repeat
         top: 5px
         left: 8px
+
+        @media ($width-desktop)
+          width: 23px
+          height: 27px
+          background: url("img/arrow-right-icon-desktop.png") no-repeat
+          top: 10px
+          left: 16px
 

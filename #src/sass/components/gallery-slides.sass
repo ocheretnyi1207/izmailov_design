@@ -11,19 +11,19 @@
     grid-row-gap: 6px
     grid-template-areas: "item1-1 item1-2" "item1-1 item1-3"
 
-    li:first-child
+    .gallery-slides__item:first-child
       grid-area: item1-1
 
-      picture
+      .gallery-slides__img
         margin-bottom: 5px
 
         &:last-child
           margin-bottom: 0
 
-    li:nth-child(3n+2)
+    .gallery-slides__item:nth-child(3n+2)
       grid-area: item1-2
 
-    li:last-child
+    .gallery-slides__item:last-child
       grid-area: item1-3
 
   &--two
@@ -31,24 +31,22 @@
     grid-row-gap: 6px
     grid-template-areas: "item2-1 item2-2" "item2-3 item2-4"
 
-    li:first-child
+    .gallery-slides__item:first-child
       grid-area: item2-1
 
-      picture
-        &:first-child
-          margin-bottom: 5px
+      .gallery-slides__img:first-child
+        margin-bottom: 5px
 
-    li:nth-child(4n+2)
+    .gallery-slides__item:nth-child(4n+2)
       grid-area: item2-2
 
-      picture
-        &:first-child
-          margin-bottom: 5px
+      .gallery-slides__img:first-child
+        margin-bottom: 5px
 
-    li:nth-child(4n+3)
+    .gallery-slides__item:nth-child(4n+3)
       grid-area: item2-3
 
-    li:last-child
+    .gallery-slides__item:last-child
       grid-area: item2-4
 
   &--three
@@ -56,17 +54,17 @@
     grid-row-gap: 6px
     grid-template-areas: "item3-1 item3-2" "item3-3 item3-5" "item3-4 item3-5"
 
-    li:first-child
+    .gallery-slides__item:first-child
       grid-area: item3-1
 
-    li:nth-child(5n+2)
+    .gallery-slides__item:nth-child(5n+2)
       grid-area: item3-2
 
-    li:nth-child(5n+3)
+    .gallery-slides__item:nth-child(5n+3)
       grid-area: item3-3
 
-    li:nth-child(5n+4)
+    .gallery-slides__item:nth-child(5n+4)
       grid-area: item3-4
 
-    li:last-child
+    .gallery-slides__item:last-child
       grid-area: item3-5

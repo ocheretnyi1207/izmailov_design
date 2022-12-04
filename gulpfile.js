@@ -60,8 +60,8 @@ gulp.task("css", () => {
     })
 
     gulp.watch(PATH.WATCH.SASS, gulp.series("css", "refresh"));
-    gulp.watch(PATH.SRC.IMG, gulp.series("copy"));
-    gulp.watch(PATH.SRC.JS, gulp.series("copy"));
+    gulp.watch(PATH.SRC.IMG, gulp.series("copy", "refresh"));
+    gulp.watch(PATH.SRC.JS, gulp.series("copy", "refresh"));
     gulp.watch(PATH.SRC.HTML, gulp.series("copy"));
     gulp.watch(PATH.SRC.HTML).on("change", browsersync.reload);
   });

@@ -11,6 +11,11 @@
   &--footer
     flex-direction: row-reverse
 
+    @media ($width-desktop)
+      width: 220px
+      padding: 0
+      margin: 0
+
   &__tel
     display: block
     padding-top: 2px
@@ -26,6 +31,9 @@
 
     &--footer
       color: $color-white
+
+      @media ($width-desktop)
+        margin: 0
 
   &__whatsapp
     font-size: 0
@@ -43,9 +51,15 @@
       margin-top: 10px
 
     &--footer
-      background: url("/img/whatsapp-icon-footer.svg") no-repeat
+      background: url("/img/whatsapp-icon-footer-mobile.png") no-repeat
       margin-right: 5px
       margin-left: 25px
+
+      @media ($width-desktop)
+        background: url("/img/whatsapp-icon-footer-desktop.png") no-repeat
+        margin-right: 2px
+        margin-left: 28px
+        margin-top: 5px
 
   &__btn
     display: none
@@ -54,3 +68,6 @@
       display: block
       width: 205px
       min-height: 49px
+
+    &--footer
+      display: none

@@ -1,26 +1,33 @@
 .manufacture-wrap
   display: grid
   grid-template-columns: repeat(2, 1fr)
-  grid-template-rows: repeat(4, auto)
   grid-template-areas: "item1 item2" "item3 item4" "item5 item7" "item6 item7"
   grid-column-gap: 20px
-  grid-row-gap: 5px
+  grid-row-gap: 7px
 
+  @media ($width-desktop)
+    grid-row-gap: 46px
 
   &__item
     &:first-child
       grid-area: item1
 
-      picture:first-child
+      .manufacture-wrap__img:first-child
         display: block
-        margin-bottom: 5px
+        margin-bottom: 6px
+
+        @media ($width-desktop)
+          margin-bottom: 47px
 
     &:nth-child(7n+2)
       grid-area: item2
 
-      picture:first-child
+      .manufacture-wrap__img:first-child
         display: block
-        margin-bottom: 5px
+        margin-bottom: 6px
+
+        @media ($width-desktop)
+          margin-bottom: 47px
 
     &:nth-child(7n+3)
       grid-area: item3

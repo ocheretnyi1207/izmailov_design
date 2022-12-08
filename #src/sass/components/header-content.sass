@@ -4,7 +4,7 @@
   @media ($width-desktop)
     grid-template-columns: repeat(2, 1fr)
     grid-template-rows: 258px 118px 68px 156px
-    grid-template-areas: "title slider" "text slider" "description slider" "wrap slider"
+    grid-template-areas: "title slider" "subtitle slider" "description slider" "wrap slider"
 
   &__title
     margin-bottom: 21px
@@ -17,13 +17,13 @@
       padding-top: 122px
       letter-spacing: 0.5px
 
-  &__text
+  &__subtitle
     width: 273px
     margin-bottom: 32px
     letter-spacing: 0.6px
 
     @media ($width-desktop)
-      grid-area: text
+      grid-area: subtitle
       margin-bottom: 0
       width: 480px
       font-size: 28px

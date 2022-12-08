@@ -16,6 +16,13 @@
     border-radius: 1.125px
     box-shadow: 0px 6px 8px 4px rgba(34, 60, 80, 0.2)
 
+    @media ($width-desktop)
+      width: 267px
+      top: 15px
+      right: 20px
+      padding: 30px 0
+      border-radius: 5px
+
   &--footer
     margin-top: -3px
 
@@ -33,6 +40,10 @@
       width: 105px
       margin: 0 auto 12px
 
+      @media ($width-desktop)
+        width: 207px
+        margin: 0 auto 30px
+
       &:last-child
         margin-bottom: 0
 
@@ -44,6 +55,11 @@
       color: $color-dark-gray
       font-size: 8px
       line-height: 10px
+
+      @media ($width-desktop)
+        font-size: 16px
+        line-height: 19px
+        letter-spacing: 0.5px
 
     &--footer
       color: $color-white

@@ -1,0 +1,9 @@
+.manufacture-wrap
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  grid-template-areas: "item1 item2" "item3 item4" "item5 item7" "item6 item7"
+  grid-column-gap: 20px
+  grid-row-gap: 7px
+
+  @media ($width-desktop)
+    grid-row-gap: 46px

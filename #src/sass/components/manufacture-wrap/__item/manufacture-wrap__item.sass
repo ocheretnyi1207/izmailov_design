@@ -1,0 +1,35 @@
+.manufacture-wrap__item
+  &:first-child
+    grid-area: item1
+
+    .manufacture-wrap__img:first-child
+      display: block
+      margin-bottom: 6px
+
+      @media ($width-desktop)
+        margin-bottom: 47px
+
+  &:nth-child(7n+2)
+    grid-area: item2
+
+    .manufacture-wrap__img:first-child
+      display: block
+      margin-bottom: 6px
+
+      @media ($width-desktop)
+        margin-bottom: 47px
+
+  &:nth-child(7n+3)
+      grid-area: item3
+
+  &:nth-child(7n+4)
+      grid-area: item4
+
+  &:nth-child(7n+5)
+      grid-area: item5
+
+  &:nth-child(7n+6)
+      grid-area: item6
+
+  &:last-child
+      grid-area: item7

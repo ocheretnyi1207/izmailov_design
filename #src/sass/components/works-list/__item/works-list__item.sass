@@ -3,16 +3,21 @@
 
   &::before
     position: absolute
-    right: 2px
     top: 3px
-    content: ""
+    right: 2px
+
     width: 32px
     height: 10px
+
+    content: ""
+
     background: url("/img/arrow-icon-mobile.png") no-repeat
 
     @media ($width-desktop)
-      width: 70px
-      height: 15px
       top: 10px
       right: 32px
+
+      width: 70px
+      height: 15px
+
       background: url("/img/arrow-icon-desktop.png") no-repeat

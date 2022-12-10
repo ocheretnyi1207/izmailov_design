@@ -5,17 +5,22 @@
     left: 25px
 
   &::before
-    content: ""
     position: absolute
-    width: 15px
-    height: 17px
-    background: url("img/arrow-left-icon-mobile.png") no-repeat
     top: 5px
     left: 5px
 
+    width: 15px
+    height: 17px
+
+    content: ""
+
+    background: url("img/arrow-left-icon-mobile.png") no-repeat
+
     @media ($width-desktop)
-      width: 23px
-      height: 27px
-      background: url("img/arrow-left-icon-desktop.png") no-repeat
       top: 10px
       left: 14px
+
+      width: 23px
+      height: 27px
+
+      background: url("img/arrow-left-icon-desktop.png") no-repeat

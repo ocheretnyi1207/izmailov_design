@@ -7,10 +7,12 @@ html
   box-sizing: inherit
 
 body
+  font-family: $font-base
+
+  min-width: $width-mobile
   margin: 0
   padding: 0
-  font-family: $font-base
-  min-width: $width-mobile
+
   color: $color-dark-gray
 
 h1,
@@ -23,8 +25,8 @@ p
   @include reset-title
 
 h1
-  font-weight: 600
   font-size: 30px
+  font-weight: 600
   line-height: 36px
 
   @media ($width-desktop)
@@ -32,9 +34,10 @@ h1
     line-height: 53px
 
 h2
-  font-weight: 600
   font-size: 24px
+  font-weight: 600
   line-height: 29px
+
   color: $color-dark-gray
 
   @media ($width-desktop)

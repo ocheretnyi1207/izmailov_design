@@ -1,15 +1,18 @@
 .gallery-slider__dotted
-  width: 7px
-  height: 7px
-  border-radius: 50%
-  background-color: $color-form-element
   position: absolute
   top: calc(50% - 3.5px)
 
+  width: 7px
+  height: 7px
+
+  border-radius: 50%
+  background-color: $color-form-element
+
   @media ($width-desktop)
+    top: calc( 50% - 7.5px)
+
     width: 15px
     height: 15px
-    top: calc( 50% - 7.5px)
 
   &:first-child
     left: 81px

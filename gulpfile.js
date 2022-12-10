@@ -4,7 +4,7 @@ const BUILD = "build";
 const PATH = {
   SRC: {
     HTML: SOURCE + "/**/*.html",
-    SASS: SOURCE + "/sass/core/style.sass",
+    SASS: SOURCE + "/sass/layout/**/*.sass",
     JS: SOURCE + "/js/**/*.js",
     IMG: SOURCE + "/img/**/*.{jpeg,jpg,png,svg,webp}",
     FONTS: SOURCE + "/fonts/**/*.{woff2,woff}"
@@ -14,7 +14,10 @@ const PATH = {
     SASS: SOURCE + "/**/*.sass"
   },
 
-  APP: BUILD + "/",
+  APP: {
+    ROOT: BUILD + "/",
+    CSS: BUILD + "/css/"
+  }
 }
 
 const gulp = require("gulp");
@@ -30,7 +33,7 @@ gulp.task("css", () => {
       .pipe(sourcemaps.init())
       .pipe(sass())
       .pipe(sourcemaps.write())
-      .pipe(gulp.dest(PATH.APP))
+      .pipe(gulp.dest(PATH.APP.CSS))
       .pipe(browsersync.stream())
   });
 
@@ -52,7 +55,7 @@ gulp.task("css", () => {
 
   gulp.task("server", () => {
     browsersync.init({
-      server: PATH.APP,
+      server: PATH.APP.ROOT,
       notify: false,
       open: true,
       cors: true,

@@ -1,0 +1,30 @@
+.gallery-slides--two
+  grid-row-gap: 6px
+  grid-template-areas: "item2-1 item2-2" "item2-3 item2-4"
+
+  @media ($width-desktop)
+    grid-row-gap: 46px
+
+  .gallery-slides__item:first-child
+    grid-area: item2-1
+
+    .gallery-slides__img:first-child
+      margin-bottom: 8px
+
+      @media ($width-desktop)
+        margin-bottom: 46px
+
+  .gallery-slides__item:nth-child(4n+2)
+    grid-area: item2-2
+
+    .gallery-slides__img:first-child
+      margin-bottom: 8px
+
+      @media ($width-desktop)
+        margin-bottom: 46px
+
+  .gallery-slides__item:nth-child(4n+3)
+    grid-area: item2-3
+
+  .gallery-slides__item:last-child
+    grid-area: item2-4

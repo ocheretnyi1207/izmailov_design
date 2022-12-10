@@ -1,0 +1,30 @@
+.gallery-slider__dotted
+  width: 7px
+  height: 7px
+  border-radius: 50%
+  background-color: $color-form-element
+  position: absolute
+  top: calc(50% - 3.5px)
+
+  @media ($width-desktop)
+    width: 15px
+    height: 15px
+    top: calc( 50% - 7.5px)
+
+  &:first-child
+    left: 81px
+
+    @media ($width-desktop)
+      left: 395px
+
+  &:nth-child(3n+2)
+    left: 108px
+
+    @media ($width-desktop)
+      left: 487px
+
+  &:last-child
+    left: 136px
+
+    @media ($width-desktop)
+      left: 587px

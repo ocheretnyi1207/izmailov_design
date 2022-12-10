@@ -1,0 +1,18 @@
+.gallery-slides--one
+  grid-row-gap: 6px
+  grid-template-areas: "item1-1 item1-2" "item1-1 item1-3"
+
+  .gallery-slides__item:first-child
+    grid-area: item1-1
+
+    .gallery-slides__img
+      margin-bottom: 8px
+
+      &:last-child
+        margin-bottom: 0
+
+  .gallery-slides__item:nth-child(3n+2)
+    grid-area: item1-2
+
+  .gallery-slides__item:last-child
+    grid-area: item1-3

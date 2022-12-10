@@ -1,0 +1,21 @@
+.slider__btn--next
+  right: 25px
+
+  @media ($width-desktop)
+    right: 27px
+
+  &::before
+    content: ""
+    position: absolute
+    width: 15px
+    height: 17px
+    background: url("img/arrow-right-icon-mobile.png") no-repeat
+    top: 5px
+    left: 8px
+
+    @media ($width-desktop)
+      width: 23px
+      height: 27px
+      background: url("img/arrow-right-icon-desktop.png") no-repeat
+      top: 10px
+      left: 16px

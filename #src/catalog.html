@@ -12,7 +12,7 @@
 <body>
   <header class="page-header">
     <div class="container">
-      <div class="page-header__menu">
+      <div class="page-header__menu page-header__menu--catalog">
         <a class="page-header__lnk" href="index.html">
           <picture class="page-header__logo">
             <source media="(min-width: 1440px)" srcset="img/header-logo-desktop.png">
@@ -48,14 +48,18 @@
       </div>
     </div>
   </header>
-
-  <main class="page-main">
+  <main class="catalog-main">
     <div class="container">
       <aside class="catalog-menu">
-        <ul class="catalog-list">
-          <li class="catalog-list__item">
-            <a class="catalog-list__lnk">Каталог</a>
+        <ul class="breadcrumbs">
+          <li class="breadcrumbs__item">
+            <a href="index.html" class="breadcrumbs__lnk">Главная</a>
           </li>
+          <li class="breadcrumbs__item">
+            <a href="catalog.html" class="breadcrumbs__lnk">Каталог</a>
+          </li>
+        </ul>
+        <ul class="catalog-list">
           <li class="catalog-list__item">
             <a class="catalog-list__lnk">Беседки-перголы</a>
             <ul class="catalog-sublist">
@@ -617,7 +621,70 @@
             </li>
           </ul>
         </div>
+        <div class="complex">
+          <h2 class="complex__title">Комплексы</h2>
+          <p class="complex__description">В нашей мастерской также можно заказать комплекс из любых видов изделий. Стоимость зависит от размеров и количества изделий.</p>
+          <p class="complex__banner banner">при одновременном заказе беседки и арки СКИДКА 15%</p>
+          <ul class="breadcrumbs">
+            <li class="breadcrumbs__item">
+              <a href="" class="breadcrumbs__lnk">Комплексы</a>
+            </li>
+            <li class="breadcrumbs__item">
+              <a href="" class="breadcrumbs__lnk">Из шпалер, беседки и арки</a>
+            </li>
+            <ul class="complex__list product-cards">
+              <li class="product-cards__item">
+                <div class="product-cards__slider slider">
+                  <div class="slider__item slider__item--active">
+                    <picture>
+                      <source media="(min-width: 1440px)" srcset="img/slider/slider-img-complex-desktop-1.jpg">
+                      <img src="img/slider/slider-img-complex-mobile-1.jpg" alt="Комплекс из шпалер, беседки и арки">
+                    </picture>
+                  </div>
+                  <button class="slider__btn slider__btn--prev">Предыдущий слайд</button>
+                  <button class="slider__btn slider__btn--next">Следующий слайд</button>
+                </div>
+              </li>
+            </ul>
+          </ul>
+          <ul class="breadcrumbs">
+            <li class="breadcrumbs__item">
+              <a href="" class="breadcrumbs__lnk">Комплексы</a>
+            </li>
+            <li class="breadcrumbs__item">
+              <a href="" class="breadcrumbs__lnk">Из шпалер, перголы и арки</a>
+            </li>
+            <ul class="complex__list product-cards">
+              <li class="product-cards__item">
+                <div class="product-cards__slider slider">
+                  <div class="slider__item slider__item--active">
+                    <picture>
+                      <source media="(min-width: 1440px)" srcset="img/slider/slider-img-complex-desktop-2.jpg">
+                      <img src="img/slider/slider-img-complex-mobile-2.jpg" alt="Комплекс из шпалер, перголы и арки">
+                    </picture>
+                  </div>
+                  <button class="slider__btn slider__btn--prev">Предыдущий слайд</button>
+                  <button class="slider__btn slider__btn--next">Следующий слайд</button>
+                </div>
+              </li>
+            </ul>
+          </ul>
+        </div>
       </section>
+      <div class="container container--form">
+        <form class="application-form" method="post" action="index.html">
+          <fieldset class="application-form__element application-form__element--fieldset">
+            <legend class="application-form__element application-form__element--legend">Оставьте заявку на сайте для уточнения деталей, расчета стоимости изделия по вашим параметрам или для
+              заказа изделия:</legend>
+            <input class="application-form__element application-form__element--username" type="text" name="username"
+              id="username" placeholder="как к вам обращаться?">
+            <input class="application-form__element application-form__element--userphone" type="tel" name="userphone"
+              id="userphone" placeholder="ваш телефон">
+            <input class="application-form__element application-form__element--submit button" type="submit"
+              value="заказать расчет">
+          </fieldset>
+        </form>
+      </div>
     </div>
   </main>
 

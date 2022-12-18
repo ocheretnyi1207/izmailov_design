@@ -51,15 +51,18 @@
   <main class="catalog-main">
     <div class="container">
       <aside class="catalog-menu">
-        <ul class="breadcrumbs">
-          <li class="breadcrumbs__item">
-            <a href="index.html" class="breadcrumbs__lnk">Главная</a>
-          </li>
-          <li class="breadcrumbs__item">
-            <a href="catalog.html" class="breadcrumbs__lnk">Каталог</a>
-          </li>
-        </ul>
-        <ul class="catalog-list">
+        <nav class="catalog-menu__navigation catalog-navigation">
+          <ul class="catalog-navigation__breadcrumbs breadcrumbs">
+            <li class="breadcrumbs__item">
+              <a href="index.html" class="breadcrumbs__lnk">Главная</a>
+            </li>
+            <li class="breadcrumbs__item">
+              <a href="catalog.html" class="breadcrumbs__lnk">Каталог</a>
+            </li>
+          </ul>
+          <button class="catalog-navigation__btn">Открыть меню</button>
+        </nav>
+        <ul class="catalog-list catalog-list--active">
           <li class="catalog-list__item">
             <a class="catalog-list__lnk">Беседки-перголы</a>
             <ul class="catalog-sublist">
@@ -116,7 +119,7 @@
         </ul>
       </aside>
       <section class="catalog-products">
-        <h1 class="catalog-products__title">Каталог</h1>
+        <h1 class="catalog-products__title visually-hidden">Каталог</h1>
         <div class="pergola">
           <h2 class="pergola__title">Беседки-перголы</h2>
           <p class="pergola__description">Изделия из дерева помогут сделать ваш участок более стильным, функциональным.
@@ -621,6 +624,7 @@
             </li>
           </ul>
         </div>
+        <!--
         <div class="complex">
           <h2 class="complex__title">Комплексы</h2>
           <p class="complex__description">В нашей мастерской также можно заказать комплекс из любых видов изделий. Стоимость зависит от размеров и количества изделий.</p>
@@ -671,6 +675,7 @@
           </ul>
         </div>
       </section>
+      -->
       <div class="container container--form">
         <form class="application-form" method="post" action="index.html">
           <fieldset class="application-form__element application-form__element--fieldset">

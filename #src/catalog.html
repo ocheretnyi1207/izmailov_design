@@ -51,7 +51,7 @@
   <main class="catalog-main">
     <div class="container">
       <aside class="catalog-menu">
-        <nav class="catalog-menu__navigation catalog-navigation">
+        <nav class="catalog-navigation">
           <ul class="catalog-navigation__breadcrumbs breadcrumbs">
             <li class="breadcrumbs__item">
               <a href="index.html" class="breadcrumbs__lnk">Главная</a>
@@ -130,7 +130,7 @@
             дизайн беседки, перголы и беседки-перголы по вашим параметрам и размерам.</p>
           <ul class="pergola__list product-cards">
             <li class="product-cards__item">
-              <ul class="breadcrumbs">
+              <ul class="pergola__breadcrumbs breadcrumbs">
                 <li class="breadcrumbs__item">
                   <a href="" class="breadcrumbs__lnk">Беседки-перголы</a>
                 </li>
@@ -161,24 +161,26 @@
                 <button class="slider__btn slider__btn--next">Следующий слайд</button>
               </div>
               <div class="description">
-                <p class="description__label">Материал</p>
-                <p class="description__text">сосна камерной сушки</p>
-                <p class="description__label">Обработка</p>
-                <p class="description__text">материал выстроган и отшлифован под покраску</p>
-                <p class="description__label">Размеры</p>
-                <div class="description-list">
-                  <p class="description-list__item">длина - 2300см</p>
-                  <p class="description-list__item">ширина - 2300см</p>
-                  <p class="description-list__item">высота - 2300см</p>
-                  <p class="description-list__item">длина скамьи - 170см</p>
-                  <p class="description-list__item">по индивидуальным параметрам</p>
+                <div class="description__container">
+                  <p class="description__label description__label--material">Материал</p>
+                  <p class="description__text description__text--material">сосна камерной сушки</p>
+                  <p class="description__label description__label--processing">Обработка</p>
+                  <p class="description__text description__text--processing">материал выстроган и отшлифован под покраску</p>
+                  <p class="description__label description__label--size">Размеры</p>
+                  <div class="description-list">
+                    <p class="description-list__item">длина - 2300см</p>
+                    <p class="description-list__item">ширина - 2300см</p>
+                    <p class="description-list__item">высота - 2300см</p>
+                    <p class="description-list__item">длина скамьи - 170см</p>
+                    <p class="description-list__item">по индивидуальным параметрам</p>
+                  </div>
+                  <p class="description__label description__label--deadlines">Сроки</p>
+                  <p class="description__text description__text--deadlines">1-2 недели</p>
+                  <p class="description__label description__label--price">Стоимость</p>
+                  <p class="description__text description__text--price">85 тыс. руб.</p>
+                  <p class="description__label description__label--delivery">Доставка</p>
+                  <p class="description__text description__text--delivery">5 тыс.руб (доставка+установка)</p>
                 </div>
-                <p class="description__label">Сроки</p>
-                <p class="description__text">1-2 недели</p>
-                <p class="description__label">Стоимость</p>
-                <p class="description__text">85 тыс. руб.</p>
-                <p class="description__label">Доставка</p>
-                <p class="description__text">5 тыс.руб (доставка+установка)</p>
               </div>
               <p class="product-cards__notice">дополнительно: покраска готового изделия в любой цвет по таблице Ral в 3
                 этапа (грунтовка-краска-краска)
@@ -448,7 +450,7 @@
                   </picture>
                 </div>
                 <div class="slider__item">
-                   <picture>
+                  <picture>
                     <source media="(min-width: 1440px)" srcset="img/slider/slider-img-archway-desktop-2.jpg">
                     <img src="img/slider/slider-img-archway-mobile-2.jpg" alt="Полукруглая арка">
                   </picture>
@@ -504,7 +506,7 @@
                   </picture>
                 </div>
                 <div class="slider__item">
-                   <picture>
+                  <picture>
                     <source media="(min-width: 1440px)" srcset="img/slider/slider-img-astra-desktop-2.jpg">
                     <img src="img/slider/slider-img-astra-mobile-2.jpg" alt="Шпалера">
                   </picture>
@@ -676,20 +678,21 @@
         </div>
       </section>
       -->
-      <div class="container container--form">
-        <form class="application-form" method="post" action="index.html">
-          <fieldset class="application-form__element application-form__element--fieldset">
-            <legend class="application-form__element application-form__element--legend">Оставьте заявку на сайте для уточнения деталей, расчета стоимости изделия по вашим параметрам или для
-              заказа изделия:</legend>
-            <input class="application-form__element application-form__element--username" type="text" name="username"
-              id="username" placeholder="как к вам обращаться?">
-            <input class="application-form__element application-form__element--userphone" type="tel" name="userphone"
-              id="userphone" placeholder="ваш телефон">
-            <input class="application-form__element application-form__element--submit button" type="submit"
-              value="заказать расчет">
-          </fieldset>
-        </form>
-      </div>
+        <div class="container container--form">
+          <form class="application-form" method="post" action="index.html">
+            <fieldset class="application-form__element application-form__element--fieldset">
+              <legend class="application-form__element application-form__element--legend">Оставьте заявку на сайте для
+                уточнения деталей, расчета стоимости изделия по вашим параметрам или для
+                заказа изделия:</legend>
+              <input class="application-form__element application-form__element--username" type="text" name="username"
+                id="username" placeholder="как к вам обращаться?">
+              <input class="application-form__element application-form__element--userphone" type="tel" name="userphone"
+                id="userphone" placeholder="ваш телефон">
+              <input class="application-form__element application-form__element--submit button" type="submit"
+                value="заказать расчет">
+            </fieldset>
+          </form>
+        </div>
     </div>
   </main>
 

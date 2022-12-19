@@ -4,7 +4,7 @@ const BUILD = "build";
 const PATH = {
   SRC: {
     HTML: SOURCE + "/**/*.html",
-    SASS: SOURCE + "/sass/layout/**/*.sass",
+    SASS: SOURCE + "/sass/pages/**/*.sass",
     JS: SOURCE + "/js/**/*.js",
     IMG: SOURCE + "/img/**/*.{jpeg,jpg,png,svg,webp}",
     FONTS: SOURCE + "/fonts/**/*.{woff2,woff}"

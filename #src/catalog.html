@@ -120,7 +120,7 @@
       </aside>
       <section class="catalog-products">
         <h1 class="catalog-products__title visually-hidden">Каталог</h1>
-        <div id="pergola" class="pergola">
+        <div id="pergola" class="catalog-products__pergola pergola">
           <h2 class="pergola__title">Беседки-перголы</h2>
           <p class="pergola__description">Изделия из дерева помогут сделать ваш участок более стильным, функциональным.
             Уютные беседки-перголы украсят ваши семейные вечера на свежем воздухе.</p>
@@ -186,7 +186,6 @@
                     <button class="description__btn description__btn--getprice button button--white">расчитать стоимость</button>
                   </div>
                 </div>
-
               </div>
               <p class="product-cards__notice">дополнительно: покраска готового изделия в любой цвет по таблице Ral в 3
                 этапа (грунтовка-краска-краска)
@@ -206,43 +205,50 @@
                 <div class="slider__item slider__item--active">
                   <picture>
                     <source media="(min-width: 1440px)" srcset="img/slider/slider-img-graf-2-desktop-1.jpg">
-                    <img src="img/slider/slider-img-graf-2-mobile-1.jpg" alt="Пергола Граф 2">
+                    <img src="img/slider/slider-img-graf-2-mobile-1.jpg" alt="Пергола Граф 1">
                   </picture>
                 </div>
                 <div class="slider__item">
                   <picture>
                     <source media="(min-width: 1440px)" srcset="img/slider/slider-img-graf-2-desktop-2.jpg">
-                    <img src="img/slider/slider-img-graf-2-mobile-2.jpg" alt="Пергола Граф 2">
+                    <img src="img/slider/slider-img-graf-2-mobile-2.jpg" alt="Пергола Граф 1">
                   </picture>
                 </div>
                 <div class="slider__item">
                   <picture>
                     <source media="(min-width: 1440px)" srcset="img/slider/slider-img-graf-2-desktop-3.jpg">
-                    <img src="img/slider/slider-img-graf-2-mobile-3.jpg" alt="Пергола Граф 2">
+                    <img src="img/slider/slider-img-graf-2-mobile-3.jpg" alt="Пергола Граф 1">
                   </picture>
                 </div>
                 <button class="slider__btn slider__btn--prev">Предыдущий слайд</button>
                 <button class="slider__btn slider__btn--next">Следующий слайд</button>
               </div>
-              <div class="description">
-                <p class="description__label">Материал</p>
-                <p class="description__text">сосна камерной сушки</p>
-                <p class="description__label">Обработка</p>
-                <p class="description__text">материал выстроган и отшлифован под покраску</p>
-                <p class="description__label">Размеры</p>
-                <div class="description-list">
-                  <p class="description-list__item">длина - 2300см</p>
-                  <p class="description-list__item">ширина - 2300см</p>
-                  <p class="description-list__item">высота - 2300см</p>
-                  <p class="description-list__item">длина скамьи - 200см</p>
-                  <p class="description-list__item">по индивидуальным параметрам</p>
+              <div class="product-cards__description description">
+                <div class="description__container">
+                  <div class="description__parameter">
+                    <p class="description__label description__label--material">Материал:</p>
+                    <p class="description__text description__text--material">сосна камерной сушки</p>
+                    <p class="description__label description__label--processing">Обработка:</p>
+                    <p class="description__text description__text--processing">материал выстроган и отшлифован под покраску</p>
+                    <p class="description__label description__label--size">Размеры:</p>
+                    <div class="description-list">
+                      <p class="description-list__item">длина - 2300см</p>
+                      <p class="description-list__item">ширина - 2300см</p>
+                      <p class="description-list__item">высота скамьи - 200см</p>
+                      <p class="description-list__item">по индивидуальным размерам</p>
+                    </div>
+                    <p class="description__label description__label--deadlines">Сроки:</p>
+                    <p class="description__text description__text--deadlines">1-2 недели</p>
+                    <p class="description__label description__label--price">Стоимость:</p>
+                    <p class="description__text description__text--price">105 тыс. руб.</p>
+                    <p class="description__label description__label--delivery">Доставка:</p>
+                    <p class="description__text description__text--delivery">5 тыс.руб (+установка)</p>
+                  </div>
+                  <div class="description__wrap">
+                    <button class="description__btn description__btn--getorder button">оформить заказ</button>
+                    <button class="description__btn description__btn--getprice button button--white">расчитать стоимость</button>
+                  </div>
                 </div>
-                <p class="description__label">Сроки</p>
-                <p class="description__text">1-2 недели</p>
-                <p class="description__label">Стоимость</p>
-                <p class="description__text">105 тыс. руб.</p>
-                <p class="description__label">Доставка</p>
-                <p class="description__text">5 тыс.руб (доставка+установка)</p>
               </div>
               <p class="product-cards__notice">дополнительно: покраска готового изделия в любой цвет по таблице Ral в 3
                 этапа (грунтовка-краска-краска)
@@ -250,55 +256,63 @@
               <p class="product-cards__price">Стоимость: 15 тыс.руб. + материалы</p>
             </li>
             <li class="product-cards__item">
-              <ul class="breadcrumbs">
+              <ul class="pergola__breadcrumbs pergola__breadcrumbs--amphitheatre breadcrumbs">
                 <li class="breadcrumbs__item">
-                  <a href="" class="breadcrumbs__lnk">Беседки-перголы</a>
+                  <a class="breadcrumbs__lnk">Беседки-перголы</a>
                 </li>
                 <li class="breadcrumbs__item">
-                  <a href="" class="breadcrumbs__lnk">Амфитеатр</a>
+                  <a class="breadcrumbs__lnk">Амфитеатр</a>
                 </li>
               </ul>
               <div class="product-cards__slider slider">
                 <div class="slider__item slider__item--active">
                   <picture>
                     <source media="(min-width: 1440px)" srcset="img/slider/slider-img-amphitheatre-desktop-1.jpg">
-                    <img src="img/slider/slider-img-amphitheatre-mobile-1.jpg" alt="Пергола Амфитеатр">
+                    <img src="img/slider/slider-img-amphitheatre-mobile-1.jpg" alt="Пергола Граф 1">
                   </picture>
                 </div>
                 <div class="slider__item">
                   <picture>
                     <source media="(min-width: 1440px)" srcset="img/slider/slider-img-amphitheatre-desktop-2.jpg">
-                    <img src="img/slider/slider-img-amphitheatre-mobile-2.jpg" alt="Пергола Амфитеатр">
+                    <img src="img/slider/slider-img-amphitheatre-mobile-2.jpg" alt="Пергола Граф 1">
                   </picture>
                 </div>
                 <div class="slider__item">
                   <picture>
                     <source media="(min-width: 1440px)" srcset="img/slider/slider-img-amphitheatre-desktop-3.jpg">
-                    <img src="img/slider/slider-img-amphitheatre-mobile-3.jpg" alt="Пергола Амфитеатр">
+                    <img src="img/slider/slider-img-amphitheatre-mobile-3.jpg" alt="Пергола Граф 1">
                   </picture>
                 </div>
                 <button class="slider__btn slider__btn--prev">Предыдущий слайд</button>
                 <button class="slider__btn slider__btn--next">Следующий слайд</button>
               </div>
-              <div class="description">
-                <p class="description__label">Материал</p>
-                <p class="description__text">сосна камерной сушки</p>
-                <p class="description__label">Обработка</p>
-                <p class="description__text">материал выстроган и отшлифован под покраску</p>
-                <p class="description__label">Размеры</p>
-                <div class="description-list">
-                  <p class="description-list__item">длина - 4м</p>
-                  <p class="description-list__item">ширина - 1.5м</p>
-                  <p class="description-list__item">высота - 2,3м</p>
-                  <p class="description-list__item">есть выгнутая полукруглая скамья</p>
-                  <p class="description-list__item">по индивидуальным параметрам</p>
+              <div class="product-cards__description description">
+                <div class="description__container">
+                  <div class="description__parameter">
+                    <p class="description__label description__label--material">Материал:</p>
+                    <p class="description__text description__text--material">сосна камерной сушки</p>
+                    <p class="description__label description__label--processing">Обработка:</p>
+                    <p class="description__text description__text--processing">материал выстроган и отшлифован под покраску</p>
+                    <p class="description__label description__label--size">Размеры:</p>
+                    <div class="description-list description-list--amphitheatre">
+                      <p class="description-list__item">длина - 4м</p>
+                      <p class="description-list__item">ширина - 1.5м</p>
+                      <p class="description-list__item">высота - 2.3м</p>
+                      <p class="description-list__item">есть выгнутая скамья</p>
+                      <p class="description-list__item">по индивидуальным размерам</p>
+                    </div>
+                    <p class="description__label description__label--deadlines">Сроки:</p>
+                    <p class="description__text description__text--deadlines">1-2 недели</p>
+                    <p class="description__label description__label--price">Стоимость:</p>
+                    <p class="description__text description__text--price">85 тыс. руб.</p>
+                    <p class="description__label description__label--delivery">Доставка:</p>
+                    <p class="description__text description__text--delivery">5 тыс.руб (+установка)</p>
+                  </div>
+                  <div class="description__wrap">
+                    <button class="description__btn description__btn--getorder button">оформить заказ</button>
+                    <button class="description__btn description__btn--getprice button button--white">расчитать стоимость</button>
+                  </div>
                 </div>
-                <p class="description__label">Сроки</p>
-                <p class="description__text">1-2 недели</p>
-                <p class="description__label">Стоимость</p>
-                <p class="description__text">135 тыс. руб.</p>
-                <p class="description__label">Доставка</p>
-                <p class="description__text">5 тыс.руб (доставка+установка)</p>
               </div>
               <p class="product-cards__notice">дополнительно: покраска готового изделия в любой цвет по таблице Ral в 3
                 этапа (грунтовка-краска-краска)
@@ -307,7 +321,7 @@
             </li>
           </ul>
         </div>
-        <div id="fence" class="fence">
+        <div id="fence" class="catalog-products__fence fence">
           <h2 class="fence__title">Заборы/шпалеры</h2>
           <p class="fence__description">Шпалера - это разновидность деревянной решетки на раме, их можно использовать
             для разделения пространства участка на зоны, а также как опору для вьющихся растений.</p>
@@ -317,12 +331,12 @@
             (столбов), а также комплекс из нескольких шпалер под ваши параметры.</p>
           <ul class="fence__list product-cards">
             <li class="product-cards__item">
-              <ul class="breadcrumbs">
+              <ul class="fence__breadcrumbs breadcrumbs">
                 <li class="breadcrumbs__item">
-                  <a href="" class="breadcrumbs__lnk">Заборы/шпалеры</a>
+                  <a class="breadcrumbs__lnk">Заборы/шпалеры</a>
                 </li>
                 <li class="breadcrumbs__item">
-                  <a href="" class="breadcrumbs__lnk">Шпалера</a>
+                  <a class="breadcrumbs__lnk">Шпалера</a>
                 </li>
               </ul>
               <div class="product-cards__slider slider">
@@ -347,25 +361,33 @@
                 <button class="slider__btn slider__btn--prev">Предыдущий слайд</button>
                 <button class="slider__btn slider__btn--next">Следующий слайд</button>
               </div>
-              <div class="description">
-                <p class="description__label">Материал</p>
-                <p class="description__text">сосна камерной сушки</p>
-                <p class="description__label">Обработка</p>
-                <p class="description__text">материал выстроган и отшлифован под покраску</p>
-                <p class="description__label">Размеры</p>
-                <div class="description-list">
-                  <p class="description-list__item">длина - 200см</p>
-                  <p class="description-list__item">ширина - 230см</p>
-                  <p class="description-list__item">клееные столбы 140*140</p>
-                  <p class="description-list__item">рейка 3*4</p>
-                  <p class="description-list__item">по индивидуальным параметрам</p>
+              <div class="product-cards__description description">
+                <div class="description__container">
+                  <div class="description__parameter">
+                    <p class="description__label description__label--material">Материал:</p>
+                    <p class="description__text description__text--material">сосна камерной сушки</p>
+                    <p class="description__label description__label--processing">Обработка:</p>
+                    <p class="description__text description__text--processing">материал выстроган и отшлифован под покраску</p>
+                    <p class="description__label description__label--size">Размеры:</p>
+                    <div class="description-list description-list--trellis">
+                      <p class="description-list__item">длина - 200см</p>
+                      <p class="description-list__item">ширина - 200см</p>
+                      <p class="description-list__item">клееные столбы 140*140</p>
+                      <p class="description-list__item">рейка 3*4</p>
+                      <p class="description-list__item">по индивидуальным размерам</p>
+                    </div>
+                    <p class="description__label description__label--deadlines">Сроки:</p>
+                    <p class="description__text description__text--deadlines">1-2 недели</p>
+                    <p class="description__label description__label--price">Стоимость:</p>
+                    <p class="description__text description__text--price">25 тыс. руб.</p>
+                    <p class="description__label description__label--delivery">Доставка:</p>
+                    <p class="description__text description__text--delivery">5 тыс.руб (+установка)</p>
+                  </div>
+                  <div class="description__wrap">
+                    <button class="description__btn description__btn--getorder button">оформить заказ</button>
+                    <button class="description__btn description__btn--getprice button button--white">расчитать стоимость</button>
+                  </div>
                 </div>
-                <p class="description__label">Сроки</p>
-                <p class="description__text">1-2 недели</p>
-                <p class="description__label">Стоимость</p>
-                <p class="description__text">25 тыс. руб.</p>
-                <p class="description__label">Доставка</p>
-                <p class="description__text">5 тыс.руб (доставка+установка)</p>
               </div>
               <p class="product-cards__notice">дополнительно: покраска готового изделия в любой цвет по таблице Ral в 3
                 этапа (грунтовка-краска-краска)

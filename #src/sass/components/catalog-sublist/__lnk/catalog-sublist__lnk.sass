@@ -1,0 +1,32 @@
+.catalog-sublist__lnk
+  font-size: 8px
+  line-height: 1.2
+  position: relative
+  opacity: 0.5
+  color: $color-signal-black
+
+  &:hover
+    opacity: 1
+
+  &::before
+    position: absolute
+    top: 12px
+    left: -17px
+    width: 8px
+    height: 1px
+    content: ""
+    transform: rotate(-45deg)
+    background-color: $color-signal-black
+
+  &::after
+    position: absolute
+    top: 7px
+    left: -17px
+    width: 8px
+    height: 1px
+    content: ""
+    transform: rotate(45deg)
+    background-color: $color-signal-black
+
+  @media ($width-desktop)
+    font-size: 18px

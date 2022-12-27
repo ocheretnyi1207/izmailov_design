@@ -1,17 +1,19 @@
 .catalog-navigation__breadcrumbs
-  width: 138px
   position: relative
+  width: 138px
 
   &::before
     position: absolute
-
-    width: 14px
-    height: 1px
-
-    content: ""
-    transform: rotate(-74deg)
-
-    background-color: $color-signal-black
-
     top: 8px
     left: 64px
+    width: 14px
+    height: 1px
+    content: ""
+    transform: rotate(-74deg)
+    background-color: $color-signal-black
+
+  @media ($width-desktop)
+    width: 100%
+
+    &::before
+      display: none

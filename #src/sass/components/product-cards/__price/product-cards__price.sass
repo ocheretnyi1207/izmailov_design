@@ -1,5 +1,11 @@
 .product-cards__price
-  width: 312px
-  letter-spacing: 0.5px
   font-size: 14px
   line-height: 1.2
+  width: 312px
+  letter-spacing: 0.5px
+
+  @media ($width-desktop)
+    font-size: 20px
+    width: 700px
+    padding-top: 4px
+    grid-area: price

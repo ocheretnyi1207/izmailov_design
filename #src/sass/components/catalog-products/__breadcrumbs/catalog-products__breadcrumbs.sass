@@ -1,6 +1,10 @@
 .catalog-products__breadcrumbs
   margin-bottom: 10px
 
+  @media ($width-desktop)
+    grid-area: breadcrumbs
+    margin-bottom: 15px
+
   &::before
     position: absolute
     width: 14px
@@ -9,5 +13,8 @@
     transform: rotate(-74deg)
     background-color: $color-signal-black
 
-  @media ($width-desktop)
-    grid-area: breadcrumbs
+    @media ($width-desktop)
+      width: 25px
+      height: 2px
+
+

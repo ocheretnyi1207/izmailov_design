@@ -4,8 +4,13 @@
   display: grid
   margin-bottom: 23px
   letter-spacing: 0.5px
-
   grid-template-columns: 0.5fr 1.5fr
   grid-template-rows: repeat(6, auto)
   grid-gap: 10px
   grid-template-areas: "label-material text-material" "label-processing text-processing" "label-size list" "label-deadlines text-deadlines" "label-price text-price" "label-delivery text-delivery"
+
+  @media ($width-desktop)
+    font-size: 20px
+    grid-template-columns: 0.4fr 1.6fr
+    grid-gap: 20px
+    margin-bottom: 38px

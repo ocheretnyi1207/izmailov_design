@@ -1,17 +1,24 @@
 .contacts-info__whatsapp
   font-size: 0
   line-height: 0
-
   width: 15px
   height: 15px
   margin-right: 23px
+  background: url("/img/icons/whatsapp-icon-black-mobile.svg") no-repeat
 
-  background: url("/img/whatsapp-icon-header-mobile.png") no-repeat
+  &:hover
+    background: url("/img/icons/whatsapp-icon-hover-mobile.svg") no-repeat
+    cursor: url("/img/icons/cursor-hover-header.svg"), pointer
+
+  &:active
+    cursor: url("/img/icons/cursor-active.svg"), pointer
 
   @media ($width-desktop)
     width: 30px
     height: 30px
     margin-top: 10px
     margin-right: 27px
+    background: url("/img/icons/whatsapp-icon-black-desktop.svg") no-repeat
 
-    background: url("/img/whatsapp-icon-header-desktop.png") no-repeat
+    &:hover
+      background: url("/img/icons/whatsapp-icon-hover-desktop.svg") no-repeat

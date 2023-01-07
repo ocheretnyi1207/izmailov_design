@@ -5,6 +5,15 @@
   padding-top: 2px
   color: $color-signal-black
 
+  &:hover
+    color: $color-hover
+    cursor: url("/img/icons/cursor-hover-header.svg"), pointer
+
+  &:active
+    cursor: url("/img/icons/cursor-active.svg"), pointer
+    text-decoration: underline
+    color: $color-signal-black
+
   @media ($width-desktop)
     font-size: 18px
     margin-right: 50px

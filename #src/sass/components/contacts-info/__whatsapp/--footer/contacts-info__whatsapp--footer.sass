@@ -1,10 +1,17 @@
 .contacts-info__whatsapp--footer
   margin-right: 5px
   margin-left: 25px
-  background: url("/img/whatsapp-icon-footer-mobile.png") no-repeat
+  background: url("/img/icons/whatsapp-icon-white-mobile.svg") no-repeat
+
+  &:hover
+    cursor: url("/img/icons/cursor-hover-footer.svg"), pointer
+
+  &:active
+    cursor: url("/img/icons/cursor-active.svg"), pointer
+
 
   @media ($width-desktop)
     margin-top: 5px
     margin-right: 2px
     margin-left: 28px
-    background: url("/img/whatsapp-icon-footer-desktop.png") no-repeat
+    background: url("/img/icons/whatsapp-icon-white-desktop.svg") no-repeat

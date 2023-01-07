@@ -1,9 +1,18 @@
 .button--white
   $color-white: #ffffff
   $color-american-rose: #f5074b
+  $color-active: #D60C46
 
   border: 1px solid $color-american-rose
   background-color: $color-white
+
+  &:hover
+    border: 4px solid $color-american-rose
+    background-color: $color-white
+
+  &:active
+    border: none
+    background-color: $color-active
 
   @media ($width-desktop)
     letter-spacing: 0.6px

@@ -1,28 +1,30 @@
 .product-list__lnk
   $color-greenish-blue: #30616F
+  $color-hover:  #52ACC6
+  $color-active: #1E414C
 
   font-size: 10px
   line-height: 1.2
-
   display: block
-
   width: 80px
   min-height: 24px
   padding: 6px 2px
-
   text-align: center
   letter-spacing: 0.3px
-
   color: $color-white
   background-color: $color-greenish-blue
 
+  &:hover
+    background-color: $color-hover
+
+  &:active
+    background-color: $color-active
+
   @media ($width-desktop)
     font-size: 16px
-
     position: absolute
     right: 20px
     bottom: 23px
-
     width: 135px
     min-height: 35px
     padding: 8px 2px

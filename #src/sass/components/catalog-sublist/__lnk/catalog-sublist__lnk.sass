@@ -8,25 +8,41 @@
   &:hover
     opacity: 1
 
+  &:active
+    color: $color-signal-black
+    text-decoration: underline
+
   &::before
     position: absolute
-    top: 12px
-    left: -17px
-    width: 8px
+    top: 6px
+    left: -8px
+    width: 6px
     height: 1px
     content: ""
-    transform: rotate(-45deg)
+    transform: rotate(-37deg)
     background-color: $color-signal-black
+
+    @media ($width-desktop)
+      top: 12px
+      left: -17px
+      width: 8px
+      transform: rotate(-45deg)
 
   &::after
     position: absolute
-    top: 7px
-    left: -17px
-    width: 8px
+    top: 2px
+    left: -8px
+    width: 6px
     height: 1px
     content: ""
-    transform: rotate(45deg)
+    transform: rotate(37deg)
     background-color: $color-signal-black
+
+    @media ($width-desktop)
+      top: 7px
+      left: -17px
+      width: 8px
+      transform: rotate(45deg)
 
   @media ($width-desktop)
     font-size: 18px

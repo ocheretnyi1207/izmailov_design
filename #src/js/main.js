@@ -1,30 +1,36 @@
 const ESCKEYCODE = 32;
+const HEIGHT_SHOW_BTNUP = 800;
 
 const btnOpenMenu = document.querySelector(".page-header__btn");
 const navListHeader = document.querySelector(".nav-list--header");
-const btnOpenMenuCatalog = document.querySelector(".catalog-navigation__btn");
-const catalogMenu = document.querySelector(".catalog-list");
 
 btnOpenMenu.addEventListener("click", () => {
-  navListHeader.classList.toggle("nav-list--disable")
+  navListHeader.classList.toggle("nav-list--disable");
 });
 
 btnOpenMenu.addEventListener("keydown", (evt) => {
-  evt.preventDefault()
+  evt.preventDefault();
   if (evt.keyCode === ESCKEYCODE) {
-    navListHeader.classList.toggle("nav-list--disable")
+    navListHeader.classList.toggle("nav-list--disable");
   }
-})
+});
 
-btnOpenMenuCatalog.addEventListener("click", () => {
-  catalogMenu.classList.toggle("catalog-list--active")
-})
+const btnUp = document.querySelector(".btn-up");
 
-btnOpenMenuCatalog.addEventListener("keydown", (evt) => {
-  evt.preventDefault()
-  if (evt.keyCode === ESCKEYCODE) {
-    catalogMenu.classList.toggle("catalog-list--active")
-  }
-})
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY || document.documentElement.scrollTop;
+
+  scrollY > HEIGHT_SHOW_BTNUP ? btnUp.classList.remove("btn-up--hide") : btnUp.classList.add("btn-up--hide");
+
+  btnUp.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  });
+});
+
+
 
 

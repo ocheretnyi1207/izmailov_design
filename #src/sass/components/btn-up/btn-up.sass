@@ -7,11 +7,18 @@
   display: block
   width: 20px
   height: 20px
+  opacity: 0.8
   border: none
   border-radius: 50%
   background: url("/img/icons/arrow-up-icon-mobile.png") $bg-button center 3px no-repeat
   font-size: 0
   line-height: 0
+
+  &:hover
+    opacity: 0.6
+
+  &:active
+    opacity: 1
 
   @media ($width-desktop)
     width: 70px

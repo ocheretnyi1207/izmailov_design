@@ -1,10 +1,19 @@
 .gallery-slider__dotted
+  $color-hover-dot: #ACCCEB
+  $color-active-dot: #004993
+
   position: absolute
-  top: calc(50% - 3.5px)
-  width: 7px
-  height: 7px
+  top: calc(50% - 5px)
+  width: 10px
+  height: 10px
   border-radius: 50%
   background-color: $color-blue-gray
+
+  &:hover
+    background-color: $color-hover-dot
+
+  &:active
+    background-color: $color-active-dot
 
   @media ($width-desktop)
     top: calc( 50% - 7.5px)
@@ -12,10 +21,10 @@
     height: 15px
 
   &:first-child
-    left: 81px
+    left: 51px
 
     @media ($width-desktop)
-      left: 395px
+      left: 330px
 
   &:nth-child(3n+2)
     left: 108px
@@ -24,7 +33,7 @@
       left: 487px
 
   &:last-child
-    left: 136px
+    left: 166px
 
     @media ($width-desktop)
-      left: 587px
+      left: 652px

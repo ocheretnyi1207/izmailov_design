@@ -1,14 +1,24 @@
 .catalog-list__item--discount
-  &:after
+  &::after
+    $color-american-rose: #F5074B
+
     content:"-15%"
     position: absolute
-    top: 6px
-    right: 10px
+    top: 5px
+    right: 19px
     width: 32px
-    height: 10px
-    background-color: blue
+    height: 12px
+    background-color: $color-american-rose
     color: $color-white
     font-size: 8px
     text-align: center
     border-radius: 30px
-
+    padding: 2px 0
+    
+    @media ($width-desktop)
+      width: 77px
+      height: 24px
+      font-size: 14px
+      padding: 4px 0
+      top: 0
+      right: 5px

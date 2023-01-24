@@ -1,4 +1,4 @@
-//const ESCKEYCODE = 32;
+import { ESCKEYCODE } from "../constants";
 
 const btnOpenMenuCatalog = document.querySelector(".catalog-navigation__btn");
 const catalogMenu = document.querySelector(".catalog-list");
@@ -9,7 +9,7 @@ btnOpenMenuCatalog.addEventListener("click", () => {
 
 btnOpenMenuCatalog.addEventListener("keydown", (evt) => {
   evt.preventDefault();
-  if (evt.keyCode === 32) {
+  if (evt.keyCode === ESCKEYCODE) {
     catalogMenu.classList.toggle("catalog-list--active");
   }
 });

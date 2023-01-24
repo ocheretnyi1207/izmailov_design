@@ -1,6 +1,4 @@
-const DOT_CLASS = "gallery-slider__dotted";
-const DOT_ACTIVE_CLASS = "gallery-slider__dotted--active";
-const ITEM_ACTIVE_CLASS = "gallery-slider__item--active";
+import { DOT_CLASS, DOT_ACTIVE_CLASS, ITEM_ACTIVE_CLASS } from "../constants";
 
 const slides = [... document.querySelectorAll(".gallery-slider__item")];
 const dots = [... document.querySelectorAll(".gallery-slider__dotted")];

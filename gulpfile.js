@@ -1,6 +1,6 @@
 const SOURCE = "#src"
 const BUILD = "build";
-
+const PATH_WEBPACK_CONFIG = "./webpack.config.js";
 const PATH = {
   SRC: {
     HTML: SOURCE + "/**/*.html",
@@ -21,6 +21,8 @@ const PATH = {
     JS: BUILD + "/js/"
   }
 }
+
+
 
 const gulp = require("gulp");
 const plumber = require("gulp-plumber");
@@ -68,13 +70,12 @@ gulp.task("css", () => {
 
   gulp.task("js", () => {
     return gulp.src(PATH.SRC.JS)
-      .pipe(webpack(require("./webpack.config.js")))
+      .pipe(webpack(require(PATH_WEBPACK_CONFIG)))
       .pipe(gulp.dest(PATH.APP.JS))
   })
 
   gulp.task("copy", () => {
     return gulp.src([
-        // PATH.SRC.JS,
         PATH.SRC.FONTS
       ], {
         base: SOURCE

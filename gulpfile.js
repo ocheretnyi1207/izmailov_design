@@ -17,7 +17,8 @@ const PATH = {
   APP: {
     ROOT: BUILD + "/",
     CSS: BUILD + "/css/",
-    IMG: BUILD + "/img/"
+    IMG: BUILD + "/img/",
+    JS: BUILD + "/js/"
   }
 }
 
@@ -32,6 +33,7 @@ const postcss = require("gulp-postcss");
 const csso = require("gulp-csso");
 const htmlmin = require("gulp-htmlmin");
 const imagemin = require("gulp-imagemin");
+const webpack = require("webpack-stream");
 
 
 gulp.task("htmlmin", () => {
@@ -64,9 +66,15 @@ gulp.task("css", () => {
       .pipe(gulp.dest(PATH.APP.IMG))
   })
 
+  gulp.task("js", () => {
+    return gulp.src(PATH.SRC.JS)
+      .pipe(webpack(require("./webpack.config.js")))
+      .pipe(gulp.dest(PATH.APP.JS))
+  })
+
   gulp.task("copy", () => {
     return gulp.src([
-        PATH.SRC.JS,
+        // PATH.SRC.JS,
         PATH.SRC.FONTS
       ], {
         base: SOURCE
@@ -89,7 +97,7 @@ gulp.task("css", () => {
 
     gulp.watch(PATH.WATCH.SASS, gulp.series("css", "refresh"));
     gulp.watch(PATH.SRC.IMG, gulp.series("minify-image", "refresh"));
-    gulp.watch(PATH.SRC.JS, gulp.series("copy", "refresh"));
+    gulp.watch(PATH.SRC.JS, gulp.series("js", "refresh"));
     gulp.watch(PATH.SRC.HTML, gulp.series("htmlmin"));
     gulp.watch(PATH.SRC.HTML).on("change", browsersync.reload);
   });
@@ -99,5 +107,5 @@ gulp.task("css", () => {
     done();
   });
 
-  gulp.task("build", gulp.series("clean", "htmlmin", "css", "minify-image", "copy"));
+  gulp.task("build", gulp.series("clean", "htmlmin", "css", "js", "minify-image", "copy"));
   gulp.task("start", gulp.series("build", "server"));

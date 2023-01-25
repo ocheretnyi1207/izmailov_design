@@ -1,6 +1,6 @@
 const SOURCE = "#src"
 const BUILD = "build";
-const PATH_WEBPACK_CONFIG = "./webpack.config.js";
+
 const PATH = {
   SRC: {
     HTML: SOURCE + "/**/*.html",
@@ -19,10 +19,10 @@ const PATH = {
     CSS: BUILD + "/css/",
     IMG: BUILD + "/img/",
     JS: BUILD + "/js/"
-  }
+  },
+
+  WEBPACK_CONFIG: "./webpack.config.js"
 }
-
-
 
 const gulp = require("gulp");
 const plumber = require("gulp-plumber");
@@ -37,7 +37,6 @@ const htmlmin = require("gulp-htmlmin");
 const imagemin = require("gulp-imagemin");
 const webpack = require("webpack-stream");
 
-
 gulp.task("htmlmin", () => {
   return gulp.src(PATH.SRC.HTML)
     .pipe(htmlmin({
@@ -48,65 +47,65 @@ gulp.task("htmlmin", () => {
 })
 
 gulp.task("css", () => {
-    return gulp.src(PATH.SRC.SASS)
-      .pipe(plumber())
-      .pipe(sourcemaps.init())
-      .pipe(sass())
-      .pipe(postcss([autoprefixer()]))
-      .pipe(csso())
-      .pipe(sourcemaps.write())
-      .pipe(gulp.dest(PATH.APP.CSS))
-      .pipe(browsersync.stream())
-  });
+  return gulp.src(PATH.SRC.SASS)
+    .pipe(plumber())
+    .pipe(sourcemaps.init())
+    .pipe(sass())
+    .pipe(postcss([autoprefixer()]))
+    .pipe(csso())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(PATH.APP.CSS))
+    .pipe(browsersync.stream())
+});
 
-  gulp.task("minify-image", () => {
-    return gulp.src(PATH.SRC.IMG)
-      .pipe(imagemin([
-        imagemin.mozjpeg({quality: 80, progressive: true}),
-        imagemin.optipng({optimizationLevel: 3}),
-      ]))
-      .pipe(gulp.dest(PATH.APP.IMG))
-  })
+gulp.task("minify-image", () => {
+  return gulp.src(PATH.SRC.IMG)
+    .pipe(imagemin([
+      imagemin.mozjpeg({quality: 80, progressive: true}),
+      imagemin.optipng({optimizationLevel: 3}),
+    ]))
+    .pipe(gulp.dest(PATH.APP.IMG))
+})
 
-  gulp.task("js", () => {
-    return gulp.src(PATH.SRC.JS)
-      .pipe(webpack(require(PATH_WEBPACK_CONFIG)))
-      .pipe(gulp.dest(PATH.APP.JS))
-  })
+gulp.task("js", () => {
+  return gulp.src(PATH.SRC.JS)
+    .pipe(webpack(require(PATH.WEBPACK_CONFIG)))
+    .pipe(gulp.dest(PATH.APP.JS))
+})
 
-  gulp.task("copy", () => {
-    return gulp.src([
-        PATH.SRC.FONTS
-      ], {
-        base: SOURCE
-      })
-      .pipe(gulp.dest(PATH.APP.ROOT))
-  });
-
-  gulp.task("clean", () => {
-    return del(BUILD)
-  });
-
-  gulp.task("server", () => {
-    browsersync.init({
-      server: PATH.APP.ROOT,
-      notify: false,
-      open: true,
-      cors: true,
-      ui: false
+gulp.task("copy", () => {
+  return gulp.src([
+      PATH.SRC.FONTS
+    ], {
+      base: SOURCE
     })
+    .pipe(gulp.dest(PATH.APP.ROOT))
+});
 
-    gulp.watch(PATH.WATCH.SASS, gulp.series("css", "refresh"));
-    gulp.watch(PATH.SRC.IMG, gulp.series("minify-image", "refresh"));
-    gulp.watch(PATH.SRC.JS, gulp.series("js", "refresh"));
-    gulp.watch(PATH.SRC.HTML, gulp.series("htmlmin"));
-    gulp.watch(PATH.SRC.HTML).on("change", browsersync.reload);
-  });
+gulp.task("clean", () => {
+  return del(BUILD)
+});
 
-  gulp.task("refresh", (done) => {
-    browsersync.reload();
-    done();
-  });
+gulp.task("server", () => {
+  browsersync.init({
+    server: PATH.APP.ROOT,
+    notify: false,
+    open: true,
+    cors: true,
+    ui: false
+  })
 
-  gulp.task("build", gulp.series("clean", "htmlmin", "css", "js", "minify-image", "copy"));
-  gulp.task("start", gulp.series("build", "server"));
+  gulp.watch(PATH.WATCH.SASS, gulp.series("css", "refresh"));
+  gulp.watch(PATH.SRC.IMG, gulp.series("minify-image", "refresh"));
+  gulp.watch(PATH.SRC.JS, gulp.series("js", "refresh"));
+  gulp.watch(PATH.SRC.HTML, gulp.series("htmlmin"));
+  gulp.watch(PATH.SRC.HTML).on("change", browsersync.reload);
+});
+
+gulp.task("refresh", (done) => {
+  browsersync.reload();
+  done();
+});
+
+gulp.task("build", gulp.series("clean", "htmlmin", "css", "js", "minify-image", "copy"));
+gulp.task("start", gulp.series("build", "server"));

@@ -63,6 +63,7 @@ gulp.task("minify-image", () => {
     .pipe(imagemin([
       imagemin.mozjpeg({quality: 80, progressive: true}),
       imagemin.optipng({optimizationLevel: 3}),
+      imagemin.svgo()
     ]))
     .pipe(gulp.dest(PATH.APP.IMG))
 })

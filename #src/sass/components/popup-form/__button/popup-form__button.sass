@@ -1,21 +1,29 @@
 .popup-form__button
   position: relative
-  top: -305px
-  left: 277px
   width: 28px
   height: 28px
+  border: none
+  background-color: transparent
   font-size: 0
   line-height: 0
-  background-color: transparent
-  border: none
 
   &::before
     position: absolute
-    content: ""
+    top: 13px
+    left: 0
     width: 28px
     height: 2px
-    color: $color-black
-    top: 0
-    left: 0
+    content: ""
     transform: rotate(45deg)
-    z-index: 2
+    background-color: $color-blue-gray
+
+  &::after
+    position: absolute
+    top: 13px
+    left: 0
+    width: 28px
+    height: 2px
+    content: ""
+    transform: rotate(-45deg)
+    background-color: $color-blue-gray
+

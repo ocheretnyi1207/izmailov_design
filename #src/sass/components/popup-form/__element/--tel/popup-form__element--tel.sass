@@ -1,11 +1,17 @@
 .popup-form__element--tel
   margin-bottom: 15px
-  padding: 14px 0
-  padding-left: 10px
+  padding: 14px 0 14px 10px
   background-color: $color-blue-gray
+
+  @media ($width-desktop)
+    padding: 21px 0 21px 15px
+    margin-bottom: 30px
 
   &::placeholder
     opacity: 0.5
     color: $color-black
     font-size: 10px
     line-height: 1.2
+
+    @media ($width-desktop)
+      font-size: 16px

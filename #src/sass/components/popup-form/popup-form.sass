@@ -1,12 +1,18 @@
 .popup-form
   $color-light-denim: #3160cf
 
+  display: none
+  position: absolute
+  left: calc( 50% - 160px )
+  top: calc( 50% - 200px)
   width: 320px
-  margin-bottom: 20px
   padding-top: 45px
-  padding-bottom: 48px
+  padding-bottom: 25px
   background-color: $color-light-denim
 
   @media ($width-desktop)
     width: 600px
     padding-top: 100px
+    padding-bottom: 60px
+    left: calc( 50% - 300px )
+    top: calc( 50% - 285px )

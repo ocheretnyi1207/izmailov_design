@@ -3,16 +3,17 @@
 
   display: none
   position: absolute
-  left: calc( 50% - 160px )
-  top: calc( 50% - 200px)
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -25%)
   width: 320px
   padding-top: 45px
   padding-bottom: 25px
   background-color: $color-light-denim
+  outline: none
+  z-index: 5
 
   @media ($width-desktop)
     width: 600px
     padding-top: 100px
     padding-bottom: 60px
-    left: calc( 50% - 300px )
-    top: calc( 50% - 285px )

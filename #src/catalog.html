@@ -894,45 +894,50 @@
 
   <button class="btn-up btn-up--hide">Перейти к началу страницы</button>
 
-  <div class="popup">
-    <form class="popup-form popup-form--getorder" action="#">
+  <div class="popup"></div>
+
+  <template class="form-order">
+    <form class="popup-form" action="#">
       <fieldset class="popup-form__element popup-form__element--fieldset">
         <legend class="popup-form__element popup-form__element--legend">Оставьте свой номер телефона для уточнения
           деталей:</legend>
         <input class="popup-form__element popup-form__element--text" type="text" name="username"
-          id="username-form-order" placeholder="как к вам обращаться?" required pattern="[А-Яа-яЁё]{2,}">
+          id="username" placeholder="как к вам обращаться?" pattern="[А-Яа-яЁё]{2,}">
         <input class="popup-form__element popup-form__element--tel" type="tel" name="userphone"
-          id="userphone-form-order" placeholder="ваш телефон" required
-          pattern="7\s[0-9]{3}\s[0-9]{3}\s[0-9]{2}\s[0-9]{2}">
+          id="userphone-form-order" placeholder="ваш телефон" pattern="7\s[0-9]{3}\s[0-9]{3}\s[0-9]{2}\s[0-9]{2}">
         <input class="popup-form__element popup-form__element--submit button" type="submit" value="оставить заявку">
         <p class="popup-form__warning">*вы соглашаетесь с политикой конфиденциальности, оставляя заявку; мы не
           передаем
           данные третьим лицам</p>
       </fieldset>
-      <button class="popup-form__button popup-form__button--form-order">Закрыть форму</button>
+      <button class="popup-form__button popup-form__button--order">Закрыть форму</button>
     </form>
-    <form class="popup-form popup-form--getprice" action="#">
+  </template>
+
+  <template class="form-price">
+    <form class="popup-form" action="#">
       <fieldset class="popup-form__element popup-form__element--fieldset">
         <legend class="popup-form__element popup-form__element--legend">Оставьте свой номер телефона для уточнения
           cтоимости:</legend>
         <input class="popup-form__element popup-form__element--text" type="text" name="username"
-          id="username-form-price" placeholder="как к вам обращаться?" required pattern="[А-Яа-яЁё]{2,}">
+          id="username" placeholder="как к вам обращаться?" pattern="[А-Яа-яЁё]{2,}">
         <input class="popup-form__element popup-form__element--tel" type="tel" name="userphone"
-          id="userphone-form-price" placeholder="ваш телефон" required
-          pattern="7\s[0-9]{3}\s[0-9]{3}\s[0-9]{2}\s[0-9]{2}">
+          id="userphone" placeholder="ваш телефон" pattern="7\s[0-9]{3}\s[0-9]{3}\s[0-9]{2}\s[0-9]{2}">
         <input class="popup-form__element popup-form__element--text" type="text" name="size" id="size"
-          placeholder="размеры изделия" required minlength="3" maxlength="100">
+          placeholder="размеры изделия" minlength="3" maxlength="100">
         <input class="popup-form__element popup-form__element--text" type="text" name="view" id="view"
-          placeholder="вид изделия" required minlength="3" maxlength="100">
+          placeholder="вид изделия" minlength="3" maxlength="100">
         <input class="popup-form__element popup-form__element--submit button" type="submit" value="оставить заявку"
           required>
         <p class="popup-form__warning">*вы соглашаетесь с политикой конфиденциальности, оставляя заявку; мы не
           передаем
           данные третьим лицам</p>
-        <button class="popup-form__button popup-form__button--form-price">Закрыть форму</button>
+        <button class="popup-form__button popup-form__button--price">Закрыть форму</button>
       </fieldset>
     </form>
-  </div>
+  </template>
+
+
   <div class="blackout"></div>
   <script src="js/catalog.bundle.js"></script>
 

@@ -1,13 +1,11 @@
-import { POPUP_FORM_ACTIVE_CLASS, BLACKOUT_ACTIVE_CLASS, BLACKOUT_DISABLE_SCROLL } from "../constants";
+import { create } from "browser-sync";
+import { BLACKOUT_ACTIVE_CLASS, BLACKOUT_DISABLE_SCROLL, ESCKEYCODE} from "../constants";
 
-const body = document.querySelector("body")
+const popup = document.querySelector(".popup");
 const blackout = document.querySelector(".blackout");
-const btnGetOrder = document.querySelector(".description__btn--getorder");
-const btnGetPrice = document.querySelector(".description__btn--getprice");
-const formGetOrder = document.querySelector(".popup-form--getorder");
-const formGetPrice = document.querySelector(".popup-form--getprice");
-const btnCloseFormGetOrder = formGetOrder.querySelector(".popup-form__button");
-const btnCloseFormGetPrice = formGetPrice.querySelector(".popup-form__button");
+const body = document.querySelector("body");
+const catalogProducts = document.querySelector(".catalog-products");
+
 
 const activeBlackout = () => {
   blackout.classList.add(BLACKOUT_ACTIVE_CLASS);
@@ -19,30 +17,51 @@ const disableBlackout = () => {
   body.classList.remove(BLACKOUT_DISABLE_SCROLL);
 }
 
-
-btnGetOrder.addEventListener("click", (evt) => {
+document.addEventListener("keydown", (evt) => {
   evt.preventDefault();
-  formGetOrder.classList.add(POPUP_FORM_ACTIVE_CLASS);
-  activeBlackout();
+  if (evt.keyCode === ESCKEYCODE || evt.key === "Escape") {
+    popup.removeChild(document.querySelector(".popup-form"))
+    disableBlackout();
+  }
 });
 
+// document.addEventListener("click", () => {
+//     popup.removeChild(document.querySelector(".popup-form"))
+//     disableBlackout();
+// });
 
-btnGetPrice.addEventListener("click", (evt) => {
-  evt.preventDefault();
-  formGetPrice.classList.add(POPUP_FORM_ACTIVE_CLASS);
-  activeBlackout();
-});
+catalogProducts.addEventListener("click", (evt) => {
+  evt.stopPropagation();
+  const target = evt.target;
+
+  if (target.classList.contains("description__btn--getorder")) {
+    const fragment = document.createDocumentFragment();
+    console.log(fragment)
+    const template = document.querySelector(".form-order");
+    const form = template.content.cloneNode(true);
 
 
-btnCloseFormGetOrder.addEventListener("click", (evt) => {
-  evt.preventDefault();
-  formGetOrder.classList.remove(POPUP_FORM_ACTIVE_CLASS);
-  disableBlackout();
-});
+    const closeBtnForm = form.querySelector(".popup-form__button")
+    popup.append(form);
+    activeBlackout();
 
-btnCloseFormGetPrice.addEventListener("click", (evt) => {
-  evt.preventDefault();
-  formGetPrice.classList.remove(POPUP_FORM_ACTIVE_CLASS)
-  disableBlackout();
-});
+    closeBtnForm.addEventListener("click", () => {
+      popup.removeChild(document.querySelector(".popup-form"))
+      disableBlackout();
+    });
+  }
+
+  if (target.classList.contains("description__btn--getprice")) {
+    const template = document.querySelector(".form-price");
+    const form = template.content.cloneNode(true);
+    const closeBtnForm = form.querySelector(".popup-form__button")
+    popup.append(form);
+    activeBlackout();
+
+    closeBtnForm.addEventListener("click", () => {
+      popup.removeChild(document.querySelector(".popup-form"))
+      disableBlackout();
+    })
+  }
+})
 

@@ -1,4 +1,3 @@
-import { create } from "browser-sync";
 import { BLACKOUT_ACTIVE_CLASS, BLACKOUT_DISABLE_SCROLL, ESCKEYCODE} from "../constants";
 
 const popup = document.querySelector(".popup");
@@ -35,13 +34,10 @@ catalogProducts.addEventListener("click", (evt) => {
   const target = evt.target;
 
   if (target.classList.contains("description__btn--getorder")) {
-    const fragment = document.createDocumentFragment();
-    console.log(fragment)
     const template = document.querySelector(".form-order");
     const form = template.content.cloneNode(true);
-
-
     const closeBtnForm = form.querySelector(".popup-form__button")
+
     popup.append(form);
     activeBlackout();
 
@@ -55,6 +51,7 @@ catalogProducts.addEventListener("click", (evt) => {
     const template = document.querySelector(".form-price");
     const form = template.content.cloneNode(true);
     const closeBtnForm = form.querySelector(".popup-form__button")
+
     popup.append(form);
     activeBlackout();
 

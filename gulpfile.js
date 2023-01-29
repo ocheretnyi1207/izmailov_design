@@ -35,7 +35,8 @@ const postcss = require("gulp-postcss");
 const csso = require("gulp-csso");
 const htmlmin = require("gulp-htmlmin");
 const imagemin = require("gulp-imagemin");
-const webpack = require("webpack-stream");
+const gulpWebpack = require("webpack-stream");
+const webpack = require("webpack")
 
 gulp.task("htmlmin", () => {
   return gulp.src(PATH.SRC.HTML)
@@ -70,7 +71,7 @@ gulp.task("minify-image", () => {
 
 gulp.task("js", () => {
   return gulp.src(PATH.SRC.JS)
-    .pipe(webpack(require(PATH.WEBPACK_CONFIG)))
+    .pipe(gulpWebpack(require(PATH.WEBPACK_CONFIG)))
     .pipe(gulp.dest(PATH.APP.JS))
 })
 

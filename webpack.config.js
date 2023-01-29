@@ -3,7 +3,7 @@ const WAY = {
     CATALOG: "./#src/js/pages/catalog.js"
 }
 
-const path = require('path');
+const path = require("path");
 
 module.exports = {
     entry: {
@@ -11,8 +11,9 @@ module.exports = {
         catalog: WAY.CATALOG
     },
     output: {
-        path: path.resolve(__dirname, 'js'),
+        path: path.resolve(__dirname, "js"),
         filename: "[name].bundle.js"
     },
-    mode: "production"
+    devtool: "inline-source-map",
+    mode: "development"
 }

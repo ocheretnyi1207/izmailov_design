@@ -58,7 +58,7 @@ catalogProducts.addEventListener("click", (evt) => {
   if (target.classList.contains("description__btn--getorder")) {
     const template = document.querySelector(".form-order");
     const form = template.content.cloneNode(true);
-    const closeBtnForm = form.querySelector(".popup-form__button")
+    const closeBtnForm = form.querySelector(".popup-form__button");
 
     showForm(popup, form);
 
@@ -70,7 +70,7 @@ catalogProducts.addEventListener("click", (evt) => {
   if (target.classList.contains("description__btn--getprice")) {
     const template = document.querySelector(".form-price");
     const form = template.content.firstElementChild.cloneNode(true);
-    const closeBtnForm = form.querySelector(".popup-form__button")
+    const closeBtnForm = form.querySelector(".popup-form__button");
 
     showForm(popup, form);
 
@@ -78,4 +78,4 @@ catalogProducts.addEventListener("click", (evt) => {
       hideForm(popup);
     })
   }
-})
+});

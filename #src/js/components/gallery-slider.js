@@ -16,16 +16,16 @@ const switchSlide = (arrayDots, dotClass, arrayItems, itemClass, target) => {
 
       if (target === arrayDots[i]) {
         target.classList.add(dotClass);
-        arrayItems[i].classList.add(itemClass)
+        arrayItems[i].classList.add(itemClass);
       }
     }
   }
 }
 
 document.addEventListener("click", (evt) => {
-  const targetElement = evt.target
+  const targetElement = evt.target;
 
   if (targetElement.classList.contains(DOT_CLASS)) {
     switchSlide(dots, DOT_ACTIVE_CLASS, slides, ITEM_ACTIVE_CLASS, targetElement)
   }
-})
+});

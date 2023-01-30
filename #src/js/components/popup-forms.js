@@ -1,10 +1,13 @@
-import { BLACKOUT_ACTIVE_CLASS, BLACKOUT_DISABLE_SCROLL, ESCKEYCODE} from "../constants";
+import {
+  BLACKOUT_ACTIVE_CLASS,
+  BLACKOUT_DISABLE_SCROLL,
+  ESCKEYCODE
+} from "../constants";
 
 const popup = document.querySelector(".popup");
 const blackout = document.querySelector(".blackout");
 const body = document.querySelector("body");
 const catalogProducts = document.querySelector(".catalog-products");
-
 
 const activeBlackout = () => {
   blackout.classList.add(BLACKOUT_ACTIVE_CLASS);
@@ -27,7 +30,7 @@ const hideForm = (element) => {
 }
 
 document.addEventListener("keydown", (evt) => {
-  if (evt.key === "Escape") {
+  if (evt.keyCode === ESCKEYCODE || evt.key === "Escape") {
     hideForm(popup);
   }
 });
@@ -46,7 +49,6 @@ document.addEventListener("click", (evt) => {
       hideForm(popup);
     }
   }
-
 });
 
 catalogProducts.addEventListener("click", (evt) => {
@@ -77,4 +79,3 @@ catalogProducts.addEventListener("click", (evt) => {
     })
   }
 })
-

@@ -1,4 +1,7 @@
-import { ESCKEYCODE, SPACEKEYCODE } from "../constants";
+import {
+  ESCKEYCODE,
+  SPACEKEYCODE
+} from "../constants";
 
 const btnOpenMenuCatalog = document.querySelector(".catalog-navigation__btn");
 const catalogMenu = document.querySelector(".catalog-list");
@@ -17,7 +20,7 @@ document.addEventListener("click", () => {
 btnOpenMenuCatalog.addEventListener("keydown", (evt) => {
   evt.preventDefault();
 
-  switch(evt.keyCode) {
+  switch (evt.keyCode) {
     case SPACEKEYCODE:
       catalogMenu.classList.toggle("catalog-list--active");
       break;
@@ -27,4 +30,3 @@ btnOpenMenuCatalog.addEventListener("keydown", (evt) => {
       break;
   }
 });
-

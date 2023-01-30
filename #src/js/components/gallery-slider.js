@@ -1,7 +1,11 @@
-import { DOT_CLASS, DOT_ACTIVE_CLASS, ITEM_ACTIVE_CLASS } from "../constants";
+import {
+  DOT_CLASS,
+  DOT_ACTIVE_CLASS,
+  ITEM_ACTIVE_CLASS
+} from "../constants";
 
-const slides = [... document.querySelectorAll(".gallery-slider__item")];
-const dots = [... document.querySelectorAll(".gallery-slider__dotted")];
+const slides = [...document.querySelectorAll(".gallery-slider__item")];
+const dots = [...document.querySelectorAll(".gallery-slider__dotted")];
 
 const switchSlide = (arrayDots, dotClass, arrayItems, itemClass, target) => {
   if (arrayDots.length === arrayItems.length) {

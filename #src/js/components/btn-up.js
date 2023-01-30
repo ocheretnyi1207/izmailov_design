@@ -1,4 +1,6 @@
-import { HEIGHT_SHOW_BTNUP } from "../constants";
+import {
+  HEIGHT_SHOW_BTNUP
+} from "../constants";
 
 const btnUp = document.querySelector(".btn-up");
 
@@ -15,7 +17,3 @@ window.addEventListener("scroll", () => {
     });
   });
 });
-
-
-
-

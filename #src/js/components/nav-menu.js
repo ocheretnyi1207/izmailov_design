@@ -1,4 +1,7 @@
-import { ESCKEYCODE, SPACEKEYCODE } from "../constants";
+import {
+  ESCKEYCODE,
+  SPACEKEYCODE
+} from "../constants";
 
 const btnOpenMenu = document.querySelector(".page-header__btn");
 const navListHeader = document.querySelector(".nav-list--header");
@@ -17,7 +20,7 @@ document.addEventListener("click", () => {
 btnOpenMenu.addEventListener("keydown", (evt) => {
   evt.preventDefault();
 
-  switch(evt.keyCode) {
+  switch (evt.keyCode) {
     case SPACEKEYCODE:
       navListHeader.classList.toggle("nav-list--hide");
       break;

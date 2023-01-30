@@ -7,7 +7,6 @@ import {
 const popup = document.querySelector(".popup");
 const blackout = document.querySelector(".blackout");
 const body = document.querySelector("body");
-const catalogProducts = document.querySelector(".catalog-products");
 
 const activeBlackout = () => {
   blackout.classList.add(BLACKOUT_ACTIVE_CLASS);
@@ -51,8 +50,7 @@ document.addEventListener("click", (evt) => {
   }
 });
 
-catalogProducts.addEventListener("click", (evt) => {
-  evt.stopPropagation();
+document.addEventListener("click", (evt) => {
   const target = evt.target;
 
   if (target.classList.contains("description__btn--getorder")) {

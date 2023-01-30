@@ -76,6 +76,6 @@ catalogProducts.addEventListener("click", (evt) => {
 
     closeBtnForm.addEventListener("click", () => {
       hideForm(popup);
-    })
+    });
   }
 });

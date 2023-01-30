@@ -476,40 +476,48 @@
 
   <button class="btn-up btn-up--hide">Перейти к началу страницы</button>
 
-  <div class="popup">
+  <div class="popup"></div>
+
+  <template class="form-order">
     <form class="popup-form" action="#">
       <fieldset class="popup-form__element popup-form__element--fieldset">
         <legend class="popup-form__element popup-form__element--legend">Оставьте свой номер телефона для уточнения
           деталей:</legend>
-        <input class="popup-form__element popup-form__element--text" type="text" name="username" id="username-form-order"
-          placeholder="как к вам обращаться?" required>
-        <input class="popup-form__element popup-form__element--tel" type="tel" name="userphone" id="userphone-form-order"
-          placeholder="ваш телефон" required>
+        <input class="popup-form__element popup-form__element--text" type="text" name="username"
+          id="username" placeholder="как к вам обращаться?" pattern="[А-Яа-яЁё]{2,}" required>
+        <input class="popup-form__element popup-form__element--tel" type="tel" name="userphone"
+          id="userphone" placeholder="ваш телефон" required>
         <input class="popup-form__element popup-form__element--submit button" type="submit" value="оставить заявку">
-        <p class="popup-form__warning">*вы соглашаетесь с политикой конфиденциальности, оставляя заявку; мы не передаем
+        <p class="popup-form__warning">*вы соглашаетесь с политикой конфиденциальности, оставляя заявку; мы не
+          передаем
           данные третьим лицам</p>
       </fieldset>
-      <button class="popup-form__button popup-form__button--form-order">Закрыть форму</button>
+      <button class="popup-form__button popup-form__button--order">Закрыть форму</button>
     </form>
-    <form class="popup-form popup-form--active" action="#">
+  </template>
+
+  <template class="form-price">
+    <form class="popup-form" action="#">
       <fieldset class="popup-form__element popup-form__element--fieldset">
         <legend class="popup-form__element popup-form__element--legend">Оставьте свой номер телефона для уточнения
           cтоимости:</legend>
-        <input class="popup-form__element popup-form__element--text" type="text" name="username" id="username-form-price"
-          placeholder="как к вам обращаться?" required>
-        <input class="popup-form__element popup-form__element--tel" type="tel" name="userphone" id="userphone-form-price"
-          placeholder="ваш телефон" required>
+        <input class="popup-form__element popup-form__element--text" type="text" name="username"
+          id="username" placeholder="как к вам обращаться?" pattern="[А-Яа-яЁё]{2,}" required>
+        <input class="popup-form__element popup-form__element--tel" type="tel" name="userphone"
+          id="userphone" placeholder="ваш телефон" required>
         <input class="popup-form__element popup-form__element--text" type="text" name="size" id="size"
-          placeholder="размеры изделия" required>
+          placeholder="размеры изделия" minlength="3" maxlength="100" required>
         <input class="popup-form__element popup-form__element--text" type="text" name="view" id="view"
-          placeholder="вид изделия" required>
-        <input class="popup-form__element popup-form__element--submit button" type="submit" value="оставить заявку">
-        <p class="popup-form__warning">*вы соглашаетесь с политикой конфиденциальности, оставляя заявку; мы не передаем
+          placeholder="вид изделия" minlength="3" maxlength="100" required>
+        <input class="popup-form__element popup-form__element--submit button" type="submit" value="оставить заявку"
+          required>
+        <p class="popup-form__warning">*вы соглашаетесь с политикой конфиденциальности, оставляя заявку; мы не
+          передаем
           данные третьим лицам</p>
-        <button class="popup-form__button popup-form__button--form-price">Закрыть форму</button>
+        <button class="popup-form__button popup-form__button--price">Закрыть форму</button>
       </fieldset>
     </form>
-  </div>
+  </template>
 
   <script src="js/index.bundle.js"></script>
 

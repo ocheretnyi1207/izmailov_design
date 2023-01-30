@@ -10,10 +10,10 @@ document.addEventListener("click", (evt) => {
 
   const prevSlide = () => {
     if (index === 0) {
-      index = slides.length -1;
+      index = slides.length - 1;
       activeSlide(index);
     } else {
-      index --;
+      index--;
       activeSlide(index);
     }
   }
@@ -23,7 +23,7 @@ document.addEventListener("click", (evt) => {
       index = 0;
       activeSlide(index)
     } else {
-      index ++;
+      index++;
       activeSlide(index);
     }
   }
@@ -31,7 +31,7 @@ document.addEventListener("click", (evt) => {
   const slider = evt.target.parentNode;
   const slides = slider.querySelectorAll(".slider__item");
 
-  if(evt.target.classList.contains("slider__btn--next")) {
+  if (evt.target.classList.contains("slider__btn--next")) {
     nextSLide();
   }
 
@@ -39,4 +39,3 @@ document.addEventListener("click", (evt) => {
     prevSlide();
   }
 });
-

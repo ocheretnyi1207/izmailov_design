@@ -16,18 +16,38 @@ const disableBlackout = () => {
   body.classList.remove(BLACKOUT_DISABLE_SCROLL);
 }
 
+const showForm = (parent, child) => {
+  parent.append(child);
+  activeBlackout();
+}
+
+const hideForm = (element) => {
+  element.removeChild(document.querySelector(".popup-form"))
+  disableBlackout();
+}
+
 document.addEventListener("keydown", (evt) => {
-  evt.preventDefault();
-  if (evt.keyCode === ESCKEYCODE || evt.key === "Escape") {
-    popup.removeChild(document.querySelector(".popup-form"))
-    disableBlackout();
+  if (evt.key === "Escape") {
+    hideForm(popup);
   }
 });
 
-// document.addEventListener("click", () => {
-//     popup.removeChild(document.querySelector(".popup-form"))
-//     disableBlackout();
-// });
+document.addEventListener("click", (evt) => {
+  const popupForm = document.querySelector(".popup-form");
+
+  if (popupForm) {
+    const positionForm = popupForm.getBoundingClientRect();
+    const xMin = positionForm.left;
+    const xMax = positionForm.right;
+    const yMin = positionForm.top;
+    const yMax = positionForm.bottom;
+
+    if (evt.clientX < xMin || evt.clientX > xMax || evt.clientY < yMin || evt.clientY > yMax) {
+      hideForm(popup);
+    }
+  }
+
+});
 
 catalogProducts.addEventListener("click", (evt) => {
   evt.stopPropagation();
@@ -38,26 +58,22 @@ catalogProducts.addEventListener("click", (evt) => {
     const form = template.content.cloneNode(true);
     const closeBtnForm = form.querySelector(".popup-form__button")
 
-    popup.append(form);
-    activeBlackout();
+    showForm(popup, form);
 
     closeBtnForm.addEventListener("click", () => {
-      popup.removeChild(document.querySelector(".popup-form"))
-      disableBlackout();
+      hideForm(popup);
     });
   }
 
   if (target.classList.contains("description__btn--getprice")) {
     const template = document.querySelector(".form-price");
-    const form = template.content.cloneNode(true);
+    const form = template.content.firstElementChild.cloneNode(true);
     const closeBtnForm = form.querySelector(".popup-form__button")
 
-    popup.append(form);
-    activeBlackout();
+    showForm(popup, form);
 
     closeBtnForm.addEventListener("click", () => {
-      popup.removeChild(document.querySelector(".popup-form"))
-      disableBlackout();
+      hideForm(popup);
     })
   }
 })

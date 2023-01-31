@@ -100,11 +100,12 @@ gulp.task("server", () => {
     ui: false
   })
 
+  gulp.watch(PATH.SRC.HTML, gulp.series("htmlmin"));
+  gulp.watch(PATH.SRC.HTML).on("change", browsersync.reload);
   gulp.watch(PATH.WATCH.SASS, gulp.series("css", "refresh"));
   gulp.watch(PATH.SRC.IMG, gulp.series("minify-image", "refresh"));
   gulp.watch(PATH.SRC.JS, gulp.series("js", "refresh"));
-  gulp.watch(PATH.SRC.HTML, gulp.series("htmlmin"));
-  gulp.watch(PATH.SRC.HTML).on("change", browsersync.reload);
+  gulp.watch(PATH.SRC.PHP, gulp.series("copy", "refresh"));
 });
 
 gulp.task("refresh", (done) => {

@@ -55,10 +55,35 @@ document.addEventListener("click", (evt) => {
 
   if (target.classList.contains("description__btn--getorder")) {
     const template = document.querySelector(".form-order");
-    const form = template.content.cloneNode(true);
+    const form = template.content.firstElementChild.cloneNode(true);
     const closeBtnForm = form.querySelector(".popup-form__button");
 
+    console.log(form);
+
     showForm(popup, form);
+
+    const formSend = async(evt) => {
+      evt.preventDefault();
+
+      const formData = new FormData(form);
+
+      const response = await fetch('sendmail.php', {
+        method: "POST",
+        body: formData
+      })
+
+      console.log(respsonse)
+
+      // if (response.ok) {
+      //   let result = await response.json();
+      //   alert(result.message);
+      // } else {
+      //   alert("Ошибка")
+      // }
+
+    };
+
+    form.addEventListener("submit", formSend);
 
     closeBtnForm.addEventListener("click", () => {
       hideForm(popup);

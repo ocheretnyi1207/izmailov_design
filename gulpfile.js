@@ -7,7 +7,9 @@ const PATH = {
     SASS: SOURCE + "/sass/pages/**/*.sass",
     JS: SOURCE + "/js/**/*.js",
     IMG: SOURCE + "/img/**/*.{jpeg,jpg,png,svg,webp}",
-    FONTS: SOURCE + "/fonts/**/*.{woff2,woff}"
+    FONTS: SOURCE + "/fonts/**/*.{woff2,woff}",
+    LIB: SOURCE + "/lib",
+    PHP: SOURCE + "/php/*.php"
   },
 
   WATCH: {
@@ -36,7 +38,6 @@ const csso = require("gulp-csso");
 const htmlmin = require("gulp-htmlmin");
 const imagemin = require("gulp-imagemin");
 const gulpWebpack = require("webpack-stream");
-const webpack = require("webpack")
 
 gulp.task("htmlmin", () => {
   return gulp.src(PATH.SRC.HTML)
@@ -77,7 +78,9 @@ gulp.task("js", () => {
 
 gulp.task("copy", () => {
   return gulp.src([
-      PATH.SRC.FONTS
+      PATH.SRC.FONTS,
+      PATH.SRC.LIB,
+      PATH.SRC.PHP
     ], {
       base: SOURCE
     })

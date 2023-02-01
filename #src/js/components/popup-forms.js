@@ -1,7 +1,10 @@
 import {
   BLACKOUT_ACTIVE_CLASS,
   BLACKOUT_DISABLE_SCROLL,
-  ESCKEYCODE
+  ESCKEYCODE,
+  METHOD,
+  ASYNC,
+  URL
 } from "../constants";
 
 const popup = document.querySelector(".popup");
@@ -58,32 +61,28 @@ document.addEventListener("click", (evt) => {
     const form = template.content.firstElementChild.cloneNode(true);
     const closeBtnForm = form.querySelector(".popup-form__button");
 
-    console.log(form);
-
-    showForm(popup, form);
-
-    const formSend = async(evt) => {
+    form.addEventListener("submit", (evt) => {
       evt.preventDefault();
 
       const formData = new FormData(form);
+      console.log(formData)
+      const xhr =  new XMLHttpRequest();
 
-      const response = await fetch('sendmail.php', {
-        method: "POST",
-        body: formData
-      })
+      xhr.open(METHOD, URL, ASYNC);
 
-      console.log(respsonse)
+      xhr.onload = () => {
+        if (xhr.status === 200) {
+          alert("Сообщение было отправлено");
+        } else {
+          alert("Сообщение не оптравлено. Ошибка " + xhr.status);
+        }
+      }
 
-      // if (response.ok) {
-      //   let result = await response.json();
-      //   alert(result.message);
-      // } else {
-      //   alert("Ошибка")
-      // }
+      xhr.send(formData);
 
-    };
+    })
 
-    form.addEventListener("submit", formSend);
+    showForm(popup, form);
 
     closeBtnForm.addEventListener("click", () => {
       hideForm(popup);

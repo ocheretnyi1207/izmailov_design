@@ -8,7 +8,7 @@ const PATH = {
     JS: SOURCE + "/js/**/*.js",
     IMG: SOURCE + "/img/**/*.{jpeg,jpg,png,svg,webp}",
     FONTS: SOURCE + "/fonts/**/*.{woff2,woff}",
-    LIB: SOURCE + "/lib",
+    LIB: SOURCE + "/lib/**/*.*",
     PHP: SOURCE + "/php/*.php"
   },
 

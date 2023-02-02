@@ -50,9 +50,7 @@ const sendForm = (element, URL) => {
 
         const btnCloseForm = element.querySelector(".popup-form__button");
 
-        if (btnCloseForm.classList.contains("popup-form__button--order")) {
-          btnCloseForm.classList.add("popup-form__button--ordererror");
-        }
+        btnCloseForm.classList.contains("popup-form__button--order") ? btnCloseForm.classList.add("popup-form__button--ordererror") : btnCloseForm.classList.add("popup-form__button--priceerror");
 
         element.append(btnCloseForm);
 

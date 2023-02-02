@@ -44,7 +44,26 @@ const sendForm = (element, URL) => {
 
     xhr.onload = () => {
       if (xhr.status === STATUS_SERVER_OK) {
-        alert("Сообщение было отправлено");
+        element.classList.add("popup-form--success");
+
+        const btnCloseForm = element.querySelector(".popup-form__button");
+
+        btnCloseForm.classList.contains("popup-form__button--order") ? btnCloseForm.classList.add("popup-form__button--ordersuccess") : btnCloseForm.classList.add("popup-form__button--pricesuccess");
+
+        element.append(btnCloseForm);
+
+        const fieldset = element.querySelector(".popup-form__element--fieldset");
+        fieldset.parentNode.removeChild(fieldset);
+
+        const pStatus = document.createElement("p");
+        pStatus.textContent = "Отлично!";
+        pStatus.classList.add("popup-form__element", "popup-form__element--success");
+        element.prepend(pStatus);
+
+        const pMessage = document.createElement("p");
+        pMessage.textContent = `В скором времени, мы свяжемся с Вами, для уточнения деталей`;
+        pMessage.classList.add("popup-form__element", "popup-form__element--success");
+        pStatus.after(pMessage)
       } else {
         element.classList.add("popup-form--error");
 

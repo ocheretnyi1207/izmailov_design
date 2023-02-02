@@ -1,4 +1,5 @@
 build/
 node_modules/
-.idea/
+send_order.php
+send_price.php
 

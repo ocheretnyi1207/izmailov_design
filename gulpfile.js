@@ -8,8 +8,8 @@ const PATH = {
     JS: SOURCE + "/js/**/*.js",
     IMG: SOURCE + "/img/**/*.{jpeg,jpg,png,svg,webp}",
     FONTS: SOURCE + "/fonts/**/*.{woff2,woff}",
-    LIB: SOURCE + "/lib/**/*.*",
-    PHP: SOURCE + "/php/*.php"
+    LIB: SOURCE + "/phpmailer/**/*.*",
+    PHP: SOURCE + "/*.php"
   },
 
   WATCH: {
@@ -68,13 +68,13 @@ gulp.task("minify-image", () => {
       imagemin.svgo()
     ]))
     .pipe(gulp.dest(PATH.APP.IMG))
-})
+});
 
 gulp.task("js", () => {
   return gulp.src(PATH.SRC.JS)
     .pipe(gulpWebpack(require(PATH.WEBPACK_CONFIG)))
     .pipe(gulp.dest(PATH.APP.JS))
-})
+});
 
 gulp.task("copy", () => {
   return gulp.src([

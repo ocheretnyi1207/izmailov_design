@@ -4,7 +4,8 @@ import {
   ESCKEYCODE,
   METHOD,
   ASYNC,
-  URL
+  URL_ORDER,
+  URL_PRICE
 } from "../constants";
 
 const popup = document.querySelector(".popup");
@@ -65,10 +66,9 @@ document.addEventListener("click", (evt) => {
       evt.preventDefault();
 
       const formData = new FormData(form);
-      console.log(formData)
       const xhr =  new XMLHttpRequest();
 
-      xhr.open(METHOD, URL, ASYNC);
+      xhr.open(METHOD, URL_ORDER, ASYNC);
 
       xhr.onload = () => {
         if (xhr.status === 200) {
@@ -79,7 +79,6 @@ document.addEventListener("click", (evt) => {
       }
 
       xhr.send(formData);
-
     })
 
     showForm(popup, form);
@@ -93,6 +92,25 @@ document.addEventListener("click", (evt) => {
     const template = document.querySelector(".form-price");
     const form = template.content.firstElementChild.cloneNode(true);
     const closeBtnForm = form.querySelector(".popup-form__button");
+
+    form.addEventListener("submit", (evt) => {
+      evt.preventDefault();
+
+      const formData = new FormData(form);
+      const xhr =  new XMLHttpRequest();
+
+      xhr.open(METHOD, URL_PRICE, ASYNC);
+
+      xhr.onload = () => {
+        if (xhr.status === 200) {
+          alert("Сообщение было отправлено");
+        } else {
+          alert("Сообщение не оптравлено. Ошибка " + xhr.status);
+        }
+      }
+
+      xhr.send(formData);
+    })
 
     showForm(popup, form);
 

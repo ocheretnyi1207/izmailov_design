@@ -7,7 +7,8 @@ const ITEM_ACTIVE_CLASS = "gallery-slider__item--active";
 const POPUP_FORM_ACTIVE_CLASS = "popup-form--active";
 const BLACKOUT_ACTIVE_CLASS = "blackout--active";
 const BLACKOUT_DISABLE_SCROLL = "blackout--disable-scroll";
-const URL = "php/send.php";
+const URL_ORDER = "send_order.php";
+const URL_PRICE = "send_price.php";
 const METHOD = "POST";
 const ASYNC = true;
 
@@ -23,6 +24,7 @@ export {
   BLACKOUT_ACTIVE_CLASS,
   BLACKOUT_DISABLE_SCROLL,
   METHOD,
-  URL,
+  URL_ORDER,
+  URL_PRICE,
   ASYNC
 };

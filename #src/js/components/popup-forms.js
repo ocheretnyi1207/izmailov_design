@@ -5,7 +5,8 @@ import {
   METHOD,
   ASYNC,
   URL_ORDER,
-  URL_PRICE
+  URL_PRICE,
+  STATUS_SERVER_OK
 } from "../constants";
 
 const popup = document.querySelector(".popup");
@@ -30,6 +31,48 @@ const showForm = (parent, child) => {
 const hideForm = (element) => {
   element.removeChild(document.querySelector(".popup-form"))
   disableBlackout();
+}
+
+const sendForm = (element, URL) => {
+  element.addEventListener("submit", (evt) => {
+    evt.preventDefault();
+
+    const formData = new FormData(element);
+    const xhr = new XMLHttpRequest();
+
+    xhr.open(METHOD, URL, ASYNC);
+
+    xhr.onload = () => {
+      if (xhr.status === STATUS_SERVER_OK) {
+        alert("Сообщение было отправлено");
+      } else {
+        element.classList.add("popup-form--error");
+
+        const btnCloseForm = element.querySelector(".popup-form__button");
+
+        if (btnCloseForm.classList.contains("popup-form__button--order")) {
+          btnCloseForm.classList.add("popup-form__button--ordererror");
+        }
+
+        element.append(btnCloseForm);
+
+        const fieldset = element.querySelector(".popup-form__element--fieldset");
+        fieldset.parentNode.removeChild(fieldset);
+
+        const pStatus = document.createElement("p");
+        pStatus.textContent = "Неудача!";
+        pStatus.classList.add("popup-form__element", "popup-form__element--error");
+        element.prepend(pStatus);
+
+        const pMessage = document.createElement("p");
+        pMessage.textContent = `Сообщение не доставлено. Ошибка ${xhr.status}`;
+        pMessage.classList.add("popup-form__element", "popup-form__element--error");
+        pStatus.after(pMessage)
+      }
+    }
+
+    xhr.send(formData);
+  })
 }
 
 document.addEventListener("keydown", (evt) => {
@@ -62,26 +105,8 @@ document.addEventListener("click", (evt) => {
     const form = template.content.firstElementChild.cloneNode(true);
     const closeBtnForm = form.querySelector(".popup-form__button");
 
-    form.addEventListener("submit", (evt) => {
-      evt.preventDefault();
-
-      const formData = new FormData(form);
-      const xhr =  new XMLHttpRequest();
-
-      xhr.open(METHOD, URL_ORDER, ASYNC);
-
-      xhr.onload = () => {
-        if (xhr.status === 200) {
-          alert("Сообщение было отправлено");
-        } else {
-          alert("Сообщение не оптравлено. Ошибка " + xhr.status);
-        }
-      }
-
-      xhr.send(formData);
-    })
-
     showForm(popup, form);
+    sendForm(form, URL_ORDER);
 
     closeBtnForm.addEventListener("click", () => {
       hideForm(popup);
@@ -93,26 +118,8 @@ document.addEventListener("click", (evt) => {
     const form = template.content.firstElementChild.cloneNode(true);
     const closeBtnForm = form.querySelector(".popup-form__button");
 
-    form.addEventListener("submit", (evt) => {
-      evt.preventDefault();
-
-      const formData = new FormData(form);
-      const xhr =  new XMLHttpRequest();
-
-      xhr.open(METHOD, URL_PRICE, ASYNC);
-
-      xhr.onload = () => {
-        if (xhr.status === 200) {
-          alert("Сообщение было отправлено");
-        } else {
-          alert("Сообщение не оптравлено. Ошибка " + xhr.status);
-        }
-      }
-
-      xhr.send(formData);
-    })
-
     showForm(popup, form);
+    sendForm(form, URL_PRICE);
 
     closeBtnForm.addEventListener("click", () => {
       hideForm(popup);

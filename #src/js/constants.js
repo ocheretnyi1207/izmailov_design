@@ -11,6 +11,7 @@ const URL_ORDER = "send_order.php";
 const URL_PRICE = "send_price.php";
 const METHOD = "POST";
 const ASYNC = true;
+const STATUS_SERVER_OK = 200;
 
 
 export {
@@ -26,5 +27,6 @@ export {
   METHOD,
   URL_ORDER,
   URL_PRICE,
-  ASYNC
+  ASYNC,
+  STATUS_SERVER_OK
 };

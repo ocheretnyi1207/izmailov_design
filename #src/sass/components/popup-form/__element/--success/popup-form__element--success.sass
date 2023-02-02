@@ -1,4 +1,4 @@
-.popup-form__element--error
+.popup-form__element--success
   font-size: 16px
   line-height: 1.2
   color: $color-white
@@ -12,3 +12,10 @@
 
     @media ($width-desktop)
       margin-bottom: 30px
+
+  &:not(:first-child):not(:last-child)
+    width: 259px
+    margin: 0 auto
+
+    @media ($width-desktop)
+      width: 464px

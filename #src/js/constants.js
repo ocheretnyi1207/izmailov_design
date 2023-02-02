@@ -13,7 +13,6 @@ const METHOD = "POST";
 const ASYNC = true;
 const STATUS_SERVER_OK = 200;
 
-
 export {
   ESCKEYCODE,
   SPACEKEYCODE,

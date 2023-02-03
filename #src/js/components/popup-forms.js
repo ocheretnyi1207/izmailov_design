@@ -117,7 +117,7 @@ document.addEventListener("click", (evt) => {
 document.addEventListener("click", (evt) => {
   const target = evt.target;
 
-  if (target.classList.contains("description__btn--getorder")) {
+  if (target.classList.contains("description__btn--getorder") || target.classList.contains("contacts-info__btn")) {
     const template = document.querySelector(".form-order");
     const form = template.content.firstElementChild.cloneNode(true);
     const closeBtnForm = form.querySelector(".popup-form__button");
@@ -130,7 +130,7 @@ document.addEventListener("click", (evt) => {
     });
   }
 
-  if (target.classList.contains("description__btn--getprice")) {
+  if (target.classList.contains("description__btn--getprice") || target.classList.contains("header-content__btn--getprice") || target.classList.contains("how-works__btn")) {
     const template = document.querySelector(".form-price");
     const form = template.content.firstElementChild.cloneNode(true);
     const closeBtnForm = form.querySelector(".popup-form__button");

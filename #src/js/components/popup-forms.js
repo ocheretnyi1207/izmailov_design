@@ -117,7 +117,7 @@ document.addEventListener("click", (evt) => {
 document.addEventListener("click", (evt) => {
   const target = evt.target;
 
-  if (target.classList.contains("description__btn--getorder") || target.classList.contains("contacts-info__btn")) {
+  if (target.classList.contains("description__btn--getorder") || target.classList.contains("contacts-info__btn") || target.classList.contains("header-content__btn--callback")) {
     const template = document.querySelector(".form-order");
     const form = template.content.firstElementChild.cloneNode(true);
     const closeBtnForm = form.querySelector(".popup-form__button");
